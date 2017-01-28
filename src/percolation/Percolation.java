@@ -11,8 +11,8 @@ public class Percolation {
         N = n;
         unionFind = new WeightedQuickUnionUF(N * N + 2);
         sites = new byte[N * N]; // 0 - closed site, 1 - open site, 2 - full site
-        topSite = N * N + 1; // imaginary site to be connected with top row
-        bottomSite = N * N + 2; // imaginary site to be connected with bottom row
+        topSite = N * N; // imaginary site to be connected with top row
+        bottomSite = N * N + 1; // imaginary site to be connected with bottom row
     }
 
     public void open(int row, int col) { // open site (row, col) if it is not open already
@@ -70,12 +70,17 @@ public class Percolation {
     }
 
     public boolean percolates() {
-        return false;
+        if (unionFind.connected(topSite, bottomSite)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public static void main(String[] args) {
         Percolation percolation = new Percolation(5);
         percolation.open(2, 2);
+        System.out.print(percolation.percolates());
     }
 
     private boolean isInBounds(int row, int col) {
