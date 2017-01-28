@@ -7,7 +7,7 @@ public class PercolationStats {
     private double[] thresholds;
 
     public PercolationStats(int n, int numOfTrials) { // perform trials independent experiments on an n-by-n grid
-        if (n < 1 || trials < 1) {
+        if (n < 1 || numOfTrials < 1) {
             throw new IllegalArgumentException();
         }
         trials = numOfTrials;
@@ -50,7 +50,7 @@ public class PercolationStats {
     }
 
     public static void main(String[] args) {
-        PercolationStats stats = new PercolationStats(100, 50);
+        PercolationStats stats = new PercolationStats(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
         System.out.println("mean                    = " + stats.mean());
         System.out.println("stddev                  = " + stats.stddev());
         System.out.println("95% confidence interval = " + stats.confidenceLo() + ", " + stats.confidenceHi());
