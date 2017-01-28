@@ -9,6 +9,9 @@ public class Percolation {
     private int numOfOpenSites;
 
     public Percolation(int n) { // create n-by-n grid, with all sites blocked
+        if (n < 1) {
+            throw new IllegalArgumentException();
+        }
         N = n;
         unionFind = new WeightedQuickUnionUF(N * N + 2);
         sites = new byte[N * N]; // 0 - closed site, 1 - open site, 2 - full site
