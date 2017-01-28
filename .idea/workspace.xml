@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f264ce0-3056-4ffd-b18b-5f8502c500ba" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/algorithms.iml" afterPath="$PROJECT_DIR$/algorithms.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/percolation/Percolation.java" afterPath="$PROJECT_DIR$/src/percolation/Percolation.java" />
     </list>
     <ignored path="Algorithm.iws" />
@@ -29,11 +27,12 @@
       <file leaf-file-name="Percolation.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/percolation/Percolation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="71" column="34" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
+            <state relative-caret-position="261">
+              <caret line="89" column="58" selection-start-line="89" selection-start-column="58" selection-end-line="89" selection-end-column="58" />
               <folding>
                 <element signature="e#2299#2300#0" expanded="true" />
                 <element signature="e#2341#2342#0" expanded="true" />
+                <element signature="e#2818#2819#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -520,6 +519,7 @@
           <folding>
             <element signature="e#2299#2300#0" expanded="true" />
             <element signature="e#2341#2342#0" expanded="true" />
+            <element signature="e#2818#2819#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -548,6 +548,7 @@
           <folding>
             <element signature="e#2299#2300#0" expanded="true" />
             <element signature="e#2341#2342#0" expanded="true" />
+            <element signature="e#2818#2819#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -571,11 +572,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/percolation/Percolation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="71" column="34" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
+        <state relative-caret-position="261">
+          <caret line="89" column="58" selection-start-line="89" selection-start-column="58" selection-end-line="89" selection-end-column="58" />
           <folding>
             <element signature="e#2299#2300#0" expanded="true" />
             <element signature="e#2341#2342#0" expanded="true" />
+            <element signature="e#2818#2819#0" expanded="true" />
           </folding>
         </state>
       </provider>

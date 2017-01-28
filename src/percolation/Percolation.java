@@ -80,12 +80,6 @@ public class Percolation {
         }
     }
 
-    public static void main(String[] args) {
-        Percolation percolation = new Percolation(5);
-        percolation.open(2, 2);
-        System.out.print(percolation.percolates());
-    }
-
     private boolean isInBounds(int row, int col) {
         if (row < 1 || row > N || col < 1 || col > N) {
             throw new IndexOutOfBoundsException();
