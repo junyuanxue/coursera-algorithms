@@ -50,7 +50,9 @@ public class Percolation {
     }
 
     public boolean isOpen(int row, int col)  {
-        return false;
+        isInBounds(row, col);
+        int site = convert2dTo1dPosition(row, col);
+        return sites[site] == 1;
     }
 
     public boolean isFull(int row, int col) {
