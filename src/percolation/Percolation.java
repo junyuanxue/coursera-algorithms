@@ -32,7 +32,7 @@ public class Percolation {
             unionFind.union(currentSite, bottomSite);
         }
 
-        if (row < n) { // connect with site from bottom
+        if (row < N) { // connect with site from bottom
             connectWithNeighbourSite(currentSite, row + 1, col);
         }
 
@@ -44,7 +44,7 @@ public class Percolation {
             connectWithNeighbourSite(currentSite, row, col - 1);
         }
 
-        if (col < n) { // connect with site to the right
+        if (col < N) { // connect with site to the right
             connectWithNeighbourSite(currentSite, row, col + 1);
         }
     }
@@ -56,7 +56,13 @@ public class Percolation {
     }
 
     public boolean isFull(int row, int col) {
-        return true;
+        isInBounds(row, col);
+        int currentSite = convert2dTo1dPosition(row, col);
+        if (isOpen(row, col) && unionFind.connected(topSite, currentSite)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public int numberOfOpenSites() {
