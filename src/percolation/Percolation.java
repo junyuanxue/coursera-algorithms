@@ -29,8 +29,8 @@ public class Percolation {
         }
 
         int currentSite = convert2dTo1dPosition (row, col);
-        this.sites[currentSite] = 1;
-        this.numOfOpenSites ++;
+        sites[currentSite] = 1;
+        numOfOpenSites ++;
 
         if (row == 1 && !unionFind.connected(currentSite, topSite)) {
             unionFind.union(currentSite, topSite);
@@ -74,7 +74,7 @@ public class Percolation {
     }
 
     public int numberOfOpenSites() {
-        return this.numOfOpenSites;
+        return numOfOpenSites;
     }
 
     public boolean percolates() {
