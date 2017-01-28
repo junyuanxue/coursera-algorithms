@@ -1,3 +1,6 @@
+import percolation.Percolation;
+import edu.princeton.cs.algs4.StdRandom;
+
 public class PercolationStats {
     private int trials;
     private double[] thresholds;
@@ -14,6 +17,21 @@ public class PercolationStats {
         }
     }
 
+    private double calculateThreshold(int n) {
+        double counter = 0;
+        int row, col;
+        Percolation percolation = new Percolation(n);
+        while (!percolation.percolates()) {
+            row = StdRandom.uniform(n) + 1;
+            col = StdRandom.uniform(n) + 1;
+            if (percolation(!isOpen(row, col))) {
+                counter ++;
+                percolation.open(row, col);
+            }
+        }
+        return counter / (n * n);
+    }
+
     public double mean() { // sample mean of percolation threshold
 
     }
@@ -27,10 +45,6 @@ public class PercolationStats {
     }
 
     public double confidenceHi() { // high endpoint of 95% confidence interval
-
-    }
-
-    private double calculateThreshold(int n) {
 
     }
 

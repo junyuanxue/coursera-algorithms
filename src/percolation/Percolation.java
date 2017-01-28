@@ -1,3 +1,5 @@
+package percolation;
+
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class Percolation {
@@ -28,7 +30,7 @@ public class Percolation {
 
         int currentSite = convert2dTo1dPosition (row, col);
         this.sites[currentSite] = 1;
-        this.numOfOpenSites += 1;
+        this.numOfOpenSites ++;
 
         if (row == 1 && !unionFind.connected(currentSite, topSite)) {
             unionFind.union(currentSite, topSite);
