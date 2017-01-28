@@ -25,7 +25,7 @@ public class PercolationStats {
         while (!percolation.percolates()) {
             row = StdRandom.uniform(n) + 1;
             col = StdRandom.uniform(n) + 1;
-            if (percolation(!isOpen(row, col))) {
+            if (!percolation.isOpen(row, col)) {
                 counter ++;
                 percolation.open(row, col);
             }
@@ -50,6 +50,9 @@ public class PercolationStats {
     }
 
     public static void main(String[] args) {
-        System.out.print("hello");
+        PercolationStats stats = new PercolationStats(100, 50);
+        System.out.println("mean                    = " + stats.mean());
+        System.out.println("stddev                  = " + stats.stddev());
+        System.out.println("95% confidence interval = " + stats.confidenceLo() + ", " + stats.confidenceHi());
     }
 }
