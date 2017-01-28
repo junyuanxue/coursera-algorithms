@@ -2,8 +2,8 @@ import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class Percolation {
     private static int N;
-    private int top;
-    private int bottom;
+    private int topSite;
+    private int bottomSite;
     private WeightedQuickUnionUF unionFind;
     private byte[] sites;
 
@@ -11,8 +11,8 @@ public class Percolation {
         N = n;
         unionFind = new WeightedQuickUnionUF(N * N + 2);
         sites = new byte[N * N]; // 0 - closed site, 1 - open site, 2 - full site
-        top = N * N + 1; // imaginary site to be connected with top row
-        bottom = N * N + 2; // imaginary site to be connected with bottom row
+        topSite = N * N + 1; // imaginary site to be connected with top row
+        bottomSite = N * N + 2; // imaginary site to be connected with bottom row
     }
 
     public void open(int row, int col) { // open site (row, col) if it is not open already
@@ -24,7 +24,29 @@ public class Percolation {
         int currentSite = convert2dTo1dPosition (row, col);
         this.sites[currentSite] = 1;
 
+        if (row == 1 && !unionFind.connected(currentSite, topSite)) {
+            unionFind.union(currentSite, topSite);
+        }
 
+        if (row == N && !unionFind.connected(currentSite, bottomSite)) {
+            unionFind.union(currentSite, bottomSite);
+        }
+
+        if (row < n) { // connect with site from bottom
+            connectWithNeighbourSite(currentSite, row + 1, col);
+        }
+
+        if (row > 1) { // connect with upper site
+            connectWithNeighbourSite(currentSite, row - 1, col);
+        }
+
+        if (col > 1) { // connect with site to the left
+            connectWithNeighbourSite(currentSite, row, col - 1);
+        }
+
+        if (col < n) { // connect with site to the right
+            connectWithNeighbourSite(currentSite, row, col + 1);
+        }
     }
 
     public boolean isOpen(int row, int col)  {
@@ -40,7 +62,7 @@ public class Percolation {
     }
 
     public boolean percolates() {
-        return true;
+        return false;
     }
 
     public static void main(String[] args) {
@@ -57,5 +79,12 @@ public class Percolation {
 
     private int convert2dTo1dPosition (int row, int col) {
         return N * (row - 1) + col - 1;
+    }
+
+    private void connectWithNeighbourSite (int currentSite, int neighbourRow, int neighbourCol) {
+        if (isOpen(neighbourRow, neighbourCol)) {
+            int neighbourSite = convert2dTo1dPosition(neighbourRow, neighbourCol);
+            unionFind.union(currentSite, neighbourSite);
+        }
     }
 }
