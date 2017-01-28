@@ -6,6 +6,7 @@ public class Percolation {
     private int bottomSite;
     private WeightedQuickUnionUF unionFind;
     private byte[] sites;
+    private int numOfOpenSites;
 
     public Percolation(int n) { // create n-by-n grid, with all sites blocked
         N = n;
@@ -13,6 +14,7 @@ public class Percolation {
         sites = new byte[N * N]; // 0 - closed site, 1 - open site, 2 - full site
         topSite = N * N; // imaginary site to be connected with top row
         bottomSite = N * N + 1; // imaginary site to be connected with bottom row
+        numOfOpenSites = 0;
     }
 
     public void open(int row, int col) { // open site (row, col) if it is not open already
@@ -23,6 +25,7 @@ public class Percolation {
 
         int currentSite = convert2dTo1dPosition (row, col);
         this.sites[currentSite] = 1;
+        this.numOfOpenSites += 1;
 
         if (row == 1 && !unionFind.connected(currentSite, topSite)) {
             unionFind.union(currentSite, topSite);
@@ -66,7 +69,7 @@ public class Percolation {
     }
 
     public int numberOfOpenSites() {
-        return 0;
+        return this.numOfOpenSites;
     }
 
     public boolean percolates() {
