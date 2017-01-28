@@ -1,5 +1,8 @@
+import edu.princeton.cs.algs4.WeightedQuickUnionUF;
+
 public class Percolation {
-    public int n;
+    private int n = 0;
+    private WeightedQuickUnionUF;
 
     public Percolation(int n) { // n by n grid
         n = n;
