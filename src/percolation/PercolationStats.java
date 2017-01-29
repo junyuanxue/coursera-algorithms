@@ -5,7 +5,10 @@ public class PercolationStats {
     private int trials;
     private double[] thresholds;
 
-    public PercolationStats(int n, int numOfTrials) { // perform trials independent experiments on an n-by-n grid
+    /**
+     * perform trials independent experiments on an n-by-n grid
+     */
+    public PercolationStats(int n, int numOfTrials) {
         if (n < 1 || numOfTrials < 1) {
             throw new IllegalArgumentException();
         }

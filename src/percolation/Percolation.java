@@ -8,7 +8,10 @@ public class Percolation {
     private byte[] sites;
     private int numOfOpenSites;
 
-    public Percolation(int n) { // create n-by-n grid, with all sites blocked
+    /**
+     * @param n n-by-n grid
+     */
+    public Percolation(final int n) {
         if (n < 1) {
             throw new IllegalArgumentException();
         }
@@ -20,13 +23,17 @@ public class Percolation {
         numOfOpenSites = 0;
     }
 
-    public void open(int row, int col) { // open site (row, col) if it is not open already
+    /**
+     * @param row row position of site
+     * @param col col position of site
+     */
+    public void open(final int row, final int col) {
         isInBounds(row, col);
         if (isOpen(row, col)) {
             return;
         }
 
-        int currentSite = convert2dTo1dPosition (row, col);
+        int currentSite = convert2dTo1dPosition(row, col);
         sites[currentSite] = 1;
         numOfOpenSites ++;
 
@@ -55,13 +62,21 @@ public class Percolation {
         }
     }
 
-    public boolean isOpen(int row, int col)  {
+    /**
+     * @param row row position of site
+     * @param col col position of site
+     */
+    public boolean isOpen(final int row, final int col)  {
         isInBounds(row, col);
         int site = convert2dTo1dPosition(row, col);
         return sites[site] == 1;
     }
 
-    public boolean isFull(int row, int col) {
+    /**
+     * @param row row position of site
+     * @param col col position of site
+     */
+    public boolean isFull(final int row, final int col) {
         isInBounds(row, col);
         int currentSite = convert2dTo1dPosition(row, col);
         if (isOpen(row, col) && unionFind.connected(topSite, currentSite)) {
@@ -76,25 +91,34 @@ public class Percolation {
     }
 
     public boolean percolates() {
-        if (unionFind.connected(topSite, bottomSite)) {
-            return true;
-        } else {
-            return false;
-        }
+        return unionFind.connected(topSite, bottomSite);
     }
 
-    private boolean isInBounds(int row, int col) {
+    /**
+     * @param row row position of site
+     * @param col col position of site
+     */
+    private boolean isInBounds(final int row, final int col) {
         if (row < 1 || row > N || col < 1 || col > N) {
             throw new IndexOutOfBoundsException();
         }
         return true;
     }
 
-    private int convert2dTo1dPosition (int row, int col) {
+    /**
+     * @param row row position of site
+     * @param col col position of site
+     */
+    private int convert2dTo1dPosition(final int row, final int col) {
         return N * (row - 1) + col - 1;
     }
 
-    private void connectWithNeighbourSite (int currentSite, int neighbourRow, int neighbourCol) {
+    /**
+     * @param currentSite 1d position of current site
+     * @param neighbourRow 2d position of neighbouring site
+     * @param neighbourCol 2d position of neighbouring site
+     */
+    private void connectWithNeighbourSite(final int currentSite, final int neighbourRow, final int neighbourCol) {
         if (isOpen(neighbourRow, neighbourCol)) {
             int neighbourSite = convert2dTo1dPosition(neighbourRow, neighbourCol);
             unionFind.union(currentSite, neighbourSite);
