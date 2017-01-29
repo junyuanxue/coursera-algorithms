@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f264ce0-3056-4ffd-b18b-5f8502c500ba" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/percolation/Percolation.java" afterPath="$PROJECT_DIR$/src/percolation/Percolation.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dequesAndRandomizedQueues/Deque.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Algorithm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,7 +25,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Percolation.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Percolation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/percolation/Percolation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
@@ -33,6 +34,16 @@
                 <element signature="e#2710#2711#0" expanded="true" />
                 <element signature="e#2773#2774#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Deque.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dequesAndRandomizedQueues/Deque.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="49" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -73,6 +84,7 @@
         <option value="$PROJECT_DIR$/percolation/Percolation.java" />
         <option value="$PROJECT_DIR$/src/percolation/PercolationStats.java" />
         <option value="$PROJECT_DIR$/src/percolation/Percolation.java" />
+        <option value="$PROJECT_DIR$/src/dequesAndRandomizedQueues/Deque.java" />
       </list>
     </option>
   </component>
@@ -156,6 +168,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dequesAndRandomizedQueues" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Algorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Algorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="libs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -170,11 +200,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/libs" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/libs" />
     </key>
   </component>
   <component name="RunManager" selected="Application.PercolationStats">
@@ -651,6 +681,14 @@
             <element signature="e#2710#2711#0" expanded="true" />
             <element signature="e#2773#2774#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dequesAndRandomizedQueues/Deque.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="49" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
