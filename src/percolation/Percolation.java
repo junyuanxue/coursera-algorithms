@@ -35,7 +35,7 @@ public class Percolation {
 
         int currentSite = convert2dTo1dPosition(row, col);
         sites[currentSite] = 1;
-        numOfOpenSites ++;
+        numOfOpenSites++;
 
         if (row == 1 && !unionFind.connected(currentSite, topSite)) {
             unionFind.union(currentSite, topSite);
