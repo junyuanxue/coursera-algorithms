@@ -6,9 +6,10 @@ public class PercolationStats {
     private double[] thresholds;
 
     /**
-     * perform trials independent experiments on an n-by-n grid
+     * @param n n-by-n grid
+     * @param numOfTrials number of trials to be performed
      */
-    public PercolationStats(int n, int numOfTrials) {
+    public PercolationStats(final int n, final int numOfTrials) {
         if (n < 1 || numOfTrials < 1) {
             throw new IllegalArgumentException();
         }
@@ -20,7 +21,10 @@ public class PercolationStats {
         }
     }
 
-    private double calculateThreshold(int n) {
+    /**
+     * @param n n-by-n grid
+     */
+    private double calculateThreshold(final int n) {
         double counter = 0;
         int row, col;
         Percolation percolation = new Percolation(n);
@@ -28,7 +32,7 @@ public class PercolationStats {
             row = StdRandom.uniform(n) + 1;
             col = StdRandom.uniform(n) + 1;
             if (!percolation.isOpen(row, col)) {
-                counter ++;
+                counter++;
                 percolation.open(row, col);
             }
         }
@@ -51,7 +55,7 @@ public class PercolationStats {
         return mean() + 1.96 * stddev() / Math.sqrt(trials);
     }
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         PercolationStats stats = new PercolationStats(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
         System.out.println("mean                    = " + stats.mean());
         System.out.println("stddev                  = " + stats.stddev());
