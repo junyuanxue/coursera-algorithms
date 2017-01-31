@@ -1,4 +1,26 @@
+import java.util.Iterator;
+
 public class Deque<Item> implements Iterable<Item> {
+    private Node first;
+    private Node last;
+    private int numOfItems;
+
+    /**
+     * Private inner node class
+     * Has next and prev pointers to implement constant worst time operations
+     */
+    private class Node {
+      private Item item;
+      private Node next;
+      private Node prev;
+
+      Node(Item item) {
+        this.item = item;
+        this.next = null;
+        this.prev = null;
+      }
+    }
+
     public Deque() { // constructs an empty deque
 
     }
@@ -11,5 +33,3 @@ public class Deque<Item> implements Iterable<Item> {
     public Iterator<Item> iterator()         // return an iterator over items in order from front to end
     public static void main(String[] args)   // unit testing (optional)
 }
-
-
