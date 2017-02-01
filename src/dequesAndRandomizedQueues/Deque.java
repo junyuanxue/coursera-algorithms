@@ -39,14 +39,22 @@ public class Deque<Item> implements Iterable<Item> {
 
         first = currentNode; // currentNode becomes the first node
         if (last == null) last = first; // when currentNode gets inserted into an empty array
-
         size++;
     }
 
     public void addLast(Item item) { // add the item to the end
+        if (item == null) throw new java.lang.NullPointerException();
 
+        Node currentNode = new Node();
+        currentNode.value = item;
+        currentNode.prev = last;
+        if (last != null) last.next = currentNode;
+
+        last = currentNode;
+        if (first == null) first = last;
+        size++;
     }
-    
+
     public Item removeFirst()                // remove and return the item from the front
     public Item removeLast()                 // remove and return the item from the end
     public Iterator<Item> iterator()         // return an iterator over items in order from front to end
