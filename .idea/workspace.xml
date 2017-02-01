@@ -52,13 +52,19 @@
       <file leaf-file-name="Deque.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dequesAndRandomizedQueues/Deque.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="605">
-              <caret line="121" column="28" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="28" />
+            <state relative-caret-position="245">
+              <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
               <folding>
                 <element signature="e#556#557#0" expanded="true" />
-                <element signature="e#612#613#0" expanded="true" />
-                <element signature="e#637#638#0" expanded="true" />
-                <element signature="e#707#708#0" expanded="true" />
+                <element signature="e#611#612#0" expanded="true" />
+                <element signature="e#636#637#0" expanded="true" />
+                <element signature="e#706#707#0" expanded="true" />
+                <element signature="e#2454#2455#0" expanded="true" />
+                <element signature="e#2556#2557#0" expanded="true" />
+                <element signature="e#2713#2714#0" expanded="true" />
+                <element signature="e#2763#2764#0" expanded="true" />
+                <element signature="e#3057#3058#0" expanded="true" />
+                <element signature="e#3132#3133#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -707,13 +713,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dequesAndRandomizedQueues/Deque.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="121" column="28" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="28" />
+        <state relative-caret-position="245">
+          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
           <folding>
             <element signature="e#556#557#0" expanded="true" />
-            <element signature="e#612#613#0" expanded="true" />
-            <element signature="e#637#638#0" expanded="true" />
-            <element signature="e#707#708#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#706#707#0" expanded="true" />
+            <element signature="e#2454#2455#0" expanded="true" />
+            <element signature="e#2556#2557#0" expanded="true" />
+            <element signature="e#2713#2714#0" expanded="true" />
+            <element signature="e#2763#2764#0" expanded="true" />
+            <element signature="e#3057#3058#0" expanded="true" />
+            <element signature="e#3132#3133#0" expanded="true" />
           </folding>
         </state>
       </provider>

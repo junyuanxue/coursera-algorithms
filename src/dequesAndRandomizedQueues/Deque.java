@@ -22,7 +22,7 @@ public class Deque<Item> implements Iterable<Item> {
     }
 
     public boolean isEmpty() { // is the deque empty?
-        return size === 0;
+        return size == 0;
     }
 
     public int size() { // return the number of items on the deque
@@ -35,7 +35,7 @@ public class Deque<Item> implements Iterable<Item> {
         Node currentNode = new Node();
         currentNode.value = item;
         currentNode.next = first;
-        if (first != null) first.prev = currentNode; // setting the relationship between the first node and currentNode
+        if (first != null) first.prev = currentNode; // connecting the first node and currentNode
 
         first = currentNode; // currentNode becomes the first node
         if (last == null) last = first; // when currentNode gets inserted into an empty array
@@ -90,6 +90,10 @@ public class Deque<Item> implements Iterable<Item> {
     }
 
     public Iterator<Item> iterator() { // return an iterator over items in order from front to end
+        return new DequeIterator();
+    }
+
+    private class DequeIterator implements Iterator<Item> {
         private Node currentNode = first;
 
         @Override
@@ -109,16 +113,5 @@ public class Deque<Item> implements Iterable<Item> {
         public void remove() {
             throw new java.lang.UnsupportedOperationException();
         }
-    }
-
-    public static void main(String[] args) {
-        Deque deque = new Deque<Item>();
-        System.out.println(deque);
-        deque.addFirst("hey");
-        System.out.println(deque);
-        deque.addFirst("hello");
-        deque.addLast("world");
-        System.out.println(deque);
-        deque.removeFirst();
     }
 }
