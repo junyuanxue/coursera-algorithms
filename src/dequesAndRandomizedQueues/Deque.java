@@ -55,8 +55,26 @@ public class Deque<Item> implements Iterable<Item> {
         size++;
     }
 
-    public Item removeFirst()                // remove and return the item from the front
-    public Item removeLast()                 // remove and return the item from the end
+    public Item removeFirst() { // remove and return the item from the front
+        if (size == 0) throw new java.util.NoSuchElementException();
+
+        Item firstItem = first.value;
+
+        if (size == 1) {
+            first = null;
+            last = null;
+        } else {
+            first = first.next;
+            first.prev = null;
+        }
+
+        size--;
+        return firstItem;
+    }
+    
+    public Item removeLast() { // remove and return the item from the end
+
+    }
     public Iterator<Item> iterator()         // return an iterator over items in order from front to end
     public static void main(String[] args)   // unit testing (optional)
 }
