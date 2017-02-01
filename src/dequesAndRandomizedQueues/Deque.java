@@ -90,7 +90,35 @@ public class Deque<Item> implements Iterable<Item> {
     }
 
     public Iterator<Item> iterator() { // return an iterator over items in order from front to end
+        private Node currentNode = first;
 
+        @Override
+        public boolean hasNext() {
+            return currentNode != null;
+        }
+
+        @Override
+        public Item next() {
+            if (!hasNext()) throw new java.util.NoSuchElementException();
+            Item item = currentNode.value;
+            currentNode = currentNode.next;
+            return item;
+        }
+
+        @Override
+        public void remove() {
+            throw new java.lang.UnsupportedOperationException();
+        }
     }
-    public static void main(String[] args)   // unit testing (optional)
+
+    public static void main(String[] args) {
+        Deque deque = new Deque<Item>();
+        System.out.println(deque);
+        deque.addFirst("hey");
+        System.out.println(deque);
+        deque.addFirst("hello");
+        deque.addLast("world");
+        System.out.println(deque);
+        deque.removeFirst();
+    }
 }
