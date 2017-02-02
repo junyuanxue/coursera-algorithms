@@ -7,8 +7,14 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         size = 0;
     }
 
-    public boolean isEmpty()                 // is the queue empty?
-    public int size()                        // return the number of items on the queue
+    public boolean isEmpty() { // is the queue empty?
+        return size == 0;
+    }
+
+    public int size() { // return the number of items on the queue
+        return size;
+    }
+    
     public void enqueue(Item item)           // add the item
     public Item dequeue()                    // remove and return a random item
     public Item sample()                     // return (but do not remove) a random item
