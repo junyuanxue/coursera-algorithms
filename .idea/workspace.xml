@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f264ce0-3056-4ffd-b18b-5f8502c500ba" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dequesAndRandomizedQueues/Deque.java" afterPath="$PROJECT_DIR$/src/dequesAndRandomizedQueues/Deque.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dequesAndRandomizedQueues/RandomizedQueue.java" afterPath="$PROJECT_DIR$/src/dequesAndRandomizedQueues/RandomizedQueue.java" />
     </list>
     <ignored path="Algorithm.iws" />
@@ -52,8 +53,8 @@
       <file leaf-file-name="Deque.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dequesAndRandomizedQueues/Deque.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1278">
-              <caret line="71" column="25" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="25" />
+            <state relative-caret-position="551">
+              <caret line="111" column="17" selection-start-line="111" selection-start-column="17" selection-end-line="111" selection-end-column="17" />
               <folding>
                 <element signature="e#556#557#0" expanded="true" />
                 <element signature="e#611#612#0" expanded="true" />
@@ -64,7 +65,7 @@
                 <element signature="e#2740#2741#0" expanded="true" />
                 <element signature="e#2790#2791#0" expanded="true" />
                 <element signature="e#3084#3085#0" expanded="true" />
-                <element signature="e#3159#3160#0" expanded="true" />
+                <element signature="e#3188#3189#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -73,8 +74,8 @@
       <file leaf-file-name="RandomizedQueue.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dequesAndRandomizedQueues/RandomizedQueue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="691">
-              <caret line="88" column="10" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
+            <state relative-caret-position="444">
+              <caret line="86" column="9" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#383#384#0" expanded="true" />
@@ -87,6 +88,8 @@
                 <element signature="e#2078#2079#0" expanded="true" />
                 <element signature="e#2851#2852#0" expanded="true" />
                 <element signature="e#2920#2921#0" expanded="true" />
+                <element signature="e#3210#3211#0" expanded="true" />
+                <element signature="e#3314#3315#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -116,8 +119,8 @@
         <option value="$PROJECT_DIR$/percolation/Percolation.java" />
         <option value="$PROJECT_DIR$/src/percolation/PercolationStats.java" />
         <option value="$PROJECT_DIR$/src/percolation/Percolation.java" />
-        <option value="$PROJECT_DIR$/src/dequesAndRandomizedQueues/Deque.java" />
         <option value="$PROJECT_DIR$/src/dequesAndRandomizedQueues/RandomizedQueue.java" />
+        <option value="$PROJECT_DIR$/src/dequesAndRandomizedQueues/Deque.java" />
       </list>
     </option>
   </component>
@@ -744,8 +747,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dequesAndRandomizedQueues/Deque.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1278">
-          <caret line="71" column="25" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="25" />
+        <state relative-caret-position="551">
+          <caret line="111" column="17" selection-start-line="111" selection-start-column="17" selection-end-line="111" selection-end-column="17" />
           <folding>
             <element signature="e#556#557#0" expanded="true" />
             <element signature="e#611#612#0" expanded="true" />
@@ -756,15 +759,15 @@
             <element signature="e#2740#2741#0" expanded="true" />
             <element signature="e#2790#2791#0" expanded="true" />
             <element signature="e#3084#3085#0" expanded="true" />
-            <element signature="e#3159#3160#0" expanded="true" />
+            <element signature="e#3188#3189#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dequesAndRandomizedQueues/RandomizedQueue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
-          <caret line="88" column="10" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
+        <state relative-caret-position="444">
+          <caret line="86" column="9" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#383#384#0" expanded="true" />
@@ -777,6 +780,8 @@
             <element signature="e#2078#2079#0" expanded="true" />
             <element signature="e#2851#2852#0" expanded="true" />
             <element signature="e#2920#2921#0" expanded="true" />
+            <element signature="e#3210#3211#0" expanded="true" />
+            <element signature="e#3314#3315#0" expanded="true" />
           </folding>
         </state>
       </provider>

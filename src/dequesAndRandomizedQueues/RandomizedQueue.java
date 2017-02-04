@@ -87,6 +87,16 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         }
 
         @Override
+        public Item next() {
+            if (!hasNext()) throw new java.util.NoSuchElementException();
+            Item item = iteratorQueue[iteratorIndex];
+            iteratorIndex++;
+            return item;
+        }
 
+        @Override
+        public void remove() {
+            throw new java.lang.UnsupportedOperationException("Remove method not supported");
+        }
     }
 }
