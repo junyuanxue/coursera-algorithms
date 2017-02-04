@@ -1,4 +1,7 @@
+import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.StdRandom;
+
+import java.util.Iterator;
 
 public class RandomizedQueue<Item> implements Iterable<Item> {
     private Item[] queue;
@@ -37,7 +40,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         return dequeuedItem;
     }
 
-    private void resizeQueue (boolean isDouble) {
+    private void resizeQueue(boolean isDouble) {
         int currentSize = queue.length;
         int newSize = isDouble ? currentSize * 2 : currentSize / 2;
         int numOfItemsToCopy = isDouble ? currentSize : newSize;
@@ -46,7 +49,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         queue = resizedQueue;
     }
 
-    private int getRandomIndex () {
+    private int getRandomIndex() {
         while (true) {
             int randomIndex = StdRandom.uniform(size);
             if (queue[randomIndex] != null) return randomIndex;
@@ -57,6 +60,33 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         return queue[getRandomIndex()];
     }
 
-    public Iterator<Item> iterator()         // return an independent iterator over items in random order
-    public static void main(String[] args)   // unit testing (optional)
+    public Iterator<Item> iterator() { // return an independent iterator over items in random order
+        return new QueueIterator(queue, size);
+    }
+
+    private class QueueIterator implements Iterator<Item> {
+        private Item[] iteratorQueue;
+        private int iteratorIndex = 0;
+
+        public QueueIterator(Item[] queue, int size) {
+            iteratorQueue = (Item[]) new Object[size];
+            // copy items into iterator queue
+            System.arraycopy(queue, 0, iteratorQueue, 0, iteratorQueue.length);
+            //shuffle iterator queue
+            for (int i = 1; i < iteratorQueue.length; i++) {
+                int swapIndex = StdRandom.uniform(i + 1);
+                Item tempItem = iteratorQueue[i];
+                iteratorQueue[i] = iteratorQueue[swapIndex];
+                iteratorQueue[swapIndex] = tempItem;
+            }
+        }
+
+        @Override
+        public boolean hasNext() {
+            return (iteratorIndex < iteratorQueue.length);
+        }
+
+        @Override
+
+    }
 }
