@@ -26,14 +26,12 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 
     public Item dequeue() { // remove and return a random item
         if (size == 0) throw new java.util.NoSuchElementException("Queue is currently empty.");
-
         int index = getRandomIndex();
         Item dequeuedItem = queue[index];
         size--;
 
         queue[index] = queue[size]; // fill in the empty index
         queue[size] = null;
-
         if (queue.length > 4 && size <= queue.length / 4) resizeQueue(false);
 
         return dequeuedItem;
@@ -55,7 +53,10 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         }
     }
 
-    public Item sample()                     // return (but do not remove) a random item
+    public Item sample() { // return (but do not remove) a random item
+        return queue[getRandomIndex()];
+    }
+
     public Iterator<Item> iterator()         // return an independent iterator over items in random order
     public static void main(String[] args)   // unit testing (optional)
 }
