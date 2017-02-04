@@ -73,7 +73,7 @@ public class Deque<Item> implements Iterable<Item> {
     }
 
     public Item removeLast() { // remove and return the item from the end
-        if (size == 0) throw new java.util.NoSuchElementException();
+        if (size == 0) throw new java.util.NoSuchElementException("Deque is currently empty.");
 
         Item lastItem = last.value;
 
