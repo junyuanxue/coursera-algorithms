@@ -40,9 +40,9 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     }
 
     private void resizeQueue (boolean isDouble) {
-        private int currentSize = queue.length;
-        private int newSize = isDouble ? currentSize * 2 : currentSize / 2;
-        private int numOfItemsToCopy = isDouble ? currentSize : newSize;
+        int currentSize = queue.length;
+        int newSize = isDouble ? currentSize * 2 : currentSize / 2;
+        int numOfItemsToCopy = isDouble ? currentSize : newSize;
         Item[] resizedQueue = (Item[]) new Object[newSize];
         System.arraycopy(queue, 0, resizedQueue, 0, numOfItemsToCopy);
         queue = resizedQueue;
