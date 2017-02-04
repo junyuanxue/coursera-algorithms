@@ -1,5 +1,4 @@
 import edu.princeton.cs.algs4.StdIn;
-import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
 
 public class Permutation {
@@ -13,7 +12,7 @@ public class Permutation {
     private static void print(int size, String[] strings) {
         strings = shuffle(strings);
         for (int i = 0; i < size; i++) {
-            StdOut.println(strings[i]);
+            System.out.println(strings[i]);
         }
     }
 
