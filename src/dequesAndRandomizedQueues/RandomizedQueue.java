@@ -19,7 +19,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 
     public void enqueue(Item item) { // add the item
         if (item == null) throw new java.lang.NullPointerException();
-        if (size == queue.length) doubleQueueSize();
+        if (size == queue.length) resizeQueue(true);
         queue[size] = item;
         size++;
     }
@@ -34,18 +34,18 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         queue[index] = queue[size]; // fill in the empty index
         queue[size] = null;
 
-        if (queue.length > 4 && size <= queue.length / 4) halfQueueSize();
+        if (queue.length > 4 && size <= queue.length / 4) resizeQueue(false);
+
+        return dequeuedItem;
     }
 
-    private void doubleQueueSize () {
-        private int currentSize = queue.length
-        Item[] resizedQueue = (Item[]) new Object[currentSize * 2];
-        System.arraycopy(queue, 0, resizedQueue, 0, currentSize);
+    private void resizeQueue (boolean isDouble) {
+        private int currentSize = queue.length;
+        private int newSize = isDouble ? currentSize * 2 : currentSize / 2;
+        private int numOfItemsToCopy = isDouble ? currentSize : newSize;
+        Item[] resizedQueue = (Item[]) new Object[newSize];
+        System.arraycopy(queue, 0, resizedQueue, 0, numOfItemsToCopy);
         queue = resizedQueue;
-    }
-
-    private void halfQueueSize () {
-        
     }
 
     private int getRandomIndex () {

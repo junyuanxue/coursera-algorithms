@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f264ce0-3056-4ffd-b18b-5f8502c500ba" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dequesAndRandomizedQueues/Deque.java" afterPath="$PROJECT_DIR$/src/dequesAndRandomizedQueues/Deque.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dequesAndRandomizedQueues/RandomizedQueue.java" afterPath="$PROJECT_DIR$/src/dequesAndRandomizedQueues/RandomizedQueue.java" />
     </list>
     <ignored path="Algorithm.iws" />
@@ -74,8 +73,8 @@
       <file leaf-file-name="RandomizedQueue.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dequesAndRandomizedQueues/RandomizedQueue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+            <state relative-caret-position="425">
+              <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
               <folding>
                 <element signature="e#318#319#0" expanded="true" />
                 <element signature="e#373#374#0" expanded="true" />
@@ -757,8 +756,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dequesAndRandomizedQueues/RandomizedQueue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+        <state relative-caret-position="425">
+          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
           <folding>
             <element signature="e#318#319#0" expanded="true" />
             <element signature="e#373#374#0" expanded="true" />
