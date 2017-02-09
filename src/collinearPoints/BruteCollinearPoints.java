@@ -29,10 +29,10 @@ public class BruteCollinearPoints {
      */
     private ArrayList<LineSegment> findSegments(Point[] points) {
         ArrayList<LineSegment> foundSegments = new ArrayList<>();
-        for (int p = 0; p < pointsCopy.length - 3; p++) {
-            for (int q = p + 1; q < pointsCopy.length - 2; q++) {
-                for (int r = q + 1; r < pointsCopy.length - 1; q++) {
-                    for (int s = r + 1; s < pointsCopy.length; s++) {
+        for (int p = 0; p < points.length - 3; p++) {
+            for (int q = p + 1; q < points.length - 2; q++) {
+                for (int r = q + 1; r < points.length - 1; q++) {
+                    for (int s = r + 1; s < points.length; s++) {
                         Point pp = points[p];
                         Point qq = points[q];
                         Point rr = points[r];
@@ -57,8 +57,8 @@ public class BruteCollinearPoints {
     }
 
     private void checkNoDuplicatedPoints(Point[] points) {
-        for (i = 0; i < points.length; i++) {
-            for (j = i + 1; j < points.length; j++) {
+        for (int i = 0; i < points.length; i++) {
+            for (int j = i + 1; j < points.length; j++) {
                 if (points[i].compareTo(points[j]) == 0) {
                     throw new IllegalArgumentException("Duplicated points in input.");
                 }
