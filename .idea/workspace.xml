@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f264ce0-3056-4ffd-b18b-5f8502c500ba" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/collinearPoints/collinear.zip" afterPath="$PROJECT_DIR$/src/collinearPoints/collinear.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/collinearPoints/BruteCollinearPoints.java" afterPath="$PROJECT_DIR$/src/collinearPoints/BruteCollinearPoints.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/collinearPoints/Point.java" afterPath="$PROJECT_DIR$/src/collinearPoints/Point.java" />
     </list>
     <ignored path="Algorithm.iws" />
@@ -72,12 +70,12 @@
       <file leaf-file-name="Point.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/collinearPoints/Point.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="90" column="62" selection-start-line="90" selection-start-column="62" selection-end-line="90" selection-end-column="62" />
+            <state relative-caret-position="500">
+              <caret line="85" column="59" selection-start-line="85" selection-start-column="59" selection-end-line="85" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3285#3286#0" expanded="true" />
-                <element signature="e#3327#3328#0" expanded="true" />
+                <element signature="e#3444#3445#0" expanded="true" />
+                <element signature="e#3486#3487#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -862,12 +860,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/collinearPoints/Point.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="90" column="62" selection-start-line="90" selection-start-column="62" selection-end-line="90" selection-end-column="62" />
+        <state relative-caret-position="500">
+          <caret line="85" column="59" selection-start-line="85" selection-start-column="59" selection-end-line="85" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3285#3286#0" expanded="true" />
-            <element signature="e#3327#3328#0" expanded="true" />
+            <element signature="e#3444#3445#0" expanded="true" />
+            <element signature="e#3486#3487#0" expanded="true" />
           </folding>
         </state>
       </provider>

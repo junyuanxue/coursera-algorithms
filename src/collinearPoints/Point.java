@@ -1,5 +1,6 @@
 import java.util.Comparator;
 import edu.princeton.cs.algs4.StdDraw;
+import java.lang.NullPointerException;
 
 public class Point implements Comparable<Point> {
     private final int x;     // x-coordinate of this point
@@ -61,6 +62,7 @@ public class Point implements Comparable<Point> {
      *         argument point
      */
     public int compareTo(Point that) {
+        if (that == null) throw new NullPointerException();
         int difference = this.y - that.y;
         if (difference == 0) difference = this.x - that.x;
         return difference;
@@ -81,6 +83,7 @@ public class Point implements Comparable<Point> {
      * @return the slope between this point and the specified point
      */
     public double slopeTo(Point that) {
+        if (that == null) throw new NullPointerException();
         if (this.x == that.x && this.y != that.y) {
             return Double.POSITIVE_INFINITY;
         } else if (this.x == that.x && this.y == that.y) {
@@ -104,9 +107,7 @@ public class Point implements Comparable<Point> {
     private class SlopeOrdering implements Comparator<Point> {
         @Override
         public int compare(Point point1, Point point2) {
-            if (point1 == null || point2 == null) {
-                throw new java.lang.NullPointerException("Incorrect arguments");
-            }
+            if (point1 == null || point2 == null) throw new NullPointerException();
             double slopeDifference = slopeTo(point1) - slopeTo(point2);
             if (slopeDifference > 0) {
                 return 1;
