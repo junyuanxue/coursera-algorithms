@@ -10,7 +10,8 @@ import java.util.Collections;
 public class FastCollinearPoints {
     private List<LineSegment> segments = new ArrayList<>();
 
-    public FastCollinearPoints(Point[] points) { // finds all line segments containing 4 or more points
+    public FastCollinearPoints(Point[] points) {
+        if (points == null) throw new java.lang.NullPointerException();
         checkNoDuplicatedPoints(points);
         compareSlopes(points);
     }

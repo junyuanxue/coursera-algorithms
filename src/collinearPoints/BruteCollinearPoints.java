@@ -9,6 +9,7 @@ public class BruteCollinearPoints {
     private LineSegment[] segments;
 
     public BruteCollinearPoints(Point[] points) {
+        if (points == null) throw new java.lang.NullPointerException();
         checkNoDuplicatedPoints(points);
 
         Point[] pointsCopy = Arrays.copyOf(points, points.length);
