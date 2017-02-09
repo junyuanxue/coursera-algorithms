@@ -56,7 +56,7 @@ public class FastCollinearPoints {
     }
 
     public LineSegment[] segments() { // the line segments
-        return segments;
+        return segments.toArray(new LineSegment[segments.size()]);
     }
 
     private void checkNoDuplicatedPoints(Point[] points) {
