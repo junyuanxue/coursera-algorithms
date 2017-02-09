@@ -14,7 +14,7 @@ public class FastCollinearPoints {
     public FastCollinearPoints(Point[] points) {
         if (points == null) throw new java.lang.NullPointerException();
         checkNoDuplicatedPoints(points);
-        compareSlopes(points);
+        findSegments(points);
     }
 
     /**
