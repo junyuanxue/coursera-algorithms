@@ -103,6 +103,9 @@ public class Point implements Comparable<Point> {
     private class SlopeOrdering implements Comparator<Point> {
         @Override
         public int compare(Point point1, Point point2) {
+            if (point1 == null || point2 == null) {
+                throw new java.lang.NullPointerException("Incorrect arguments");
+            }
             double slopeDifference = slopeTo(point1) - slopeTo(point2);
             if (slopeDifference > 0) {
                 return 1;
