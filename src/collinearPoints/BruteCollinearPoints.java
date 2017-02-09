@@ -14,6 +14,8 @@ public class BruteCollinearPoints {
 
         Point[] pointsCopy = Arrays.copyOf(points, points.length);
         Arrays.sort(pointsCopy);
+        System.out.println("********* ");
+        System.out.println(pointsCopy);
         ArrayList<LineSegment> foundSegments = findSegments(pointsCopy);
         segments = foundSegments.toArray(new LineSegment[foundSegments.size()]);
     }
