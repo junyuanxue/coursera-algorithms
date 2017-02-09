@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class BruteCollinearPoints {
     private LineSegment[] segments;
 
-    public BruteCollinearPoints(Point[] points) { // finds all line segments containing 4 points
+    public BruteCollinearPoints(Point[] points) {
         checkNoDuplicatedPoints(points);
 
         Point[] pointsCopy = Arrays.copyOf(points, points.length);
@@ -17,6 +17,16 @@ public class BruteCollinearPoints {
         segments = foundSegments.toArray(new LineSegment[foundSegments.size()]);
     }
 
+    /**
+     * Examine 4 points at a time and checks whether they
+     * all lie on the same line segment, returning all such line segments.
+     *
+     * To check whether the 4 points p, q, r, and s are collinear,
+     * check whether the three slopes between p and q, between p and r,
+     * and between p and s are all equal.
+     *
+     * @param points array of points in the plane
+     */
     private ArrayList<LineSegment> findSegments(Point[] points) {
         ArrayList<LineSegment> foundSegments = new ArrayList<>();
         for (int p = 0; p < pointsCopy.length - 3; p++) {
