@@ -8,6 +8,7 @@ import java.util.Collections;
  */
 
 public class FastCollinearPoints {
+    private static final int MIN_COLLINEAR_COUNT = 4;
     private List<LineSegment> segments = new ArrayList<>();
 
     public FastCollinearPoints(Point[] points) {
@@ -26,43 +27,27 @@ public class FastCollinearPoints {
      * with respect to p. If so, these points, together with p, are collinear.
      */
 
-    private void compareSlopes (Point[] points) {
-        Point[] pointsCopy = Arrays.copyOf(points, points.length);
+    private void findSegments (Point[] points) {
+        for(int i = 0; i < points.length - 1; i++) {
+            Arrays.sort(points, i + 1, points.length, points[i].slopeOrder());
+            double currentSlope = points[i].slopeTo(points[i + 1]);
+            int consecutiveCount = 1;
 
-        for (Point startPoint : points) {
-            Arrays.sort(pointsCopy, startPoint.slopeOrder());
-            List<Point> pointsOnSameSlope = new ArrayList<>();
-            double slope = 0;
-            double previousSlope = Double.NEGATIVE_INFINITY;
-
-            for (int i = 1; i < pointsCopy.length; i++) {
-                Point currentPoint = pointsCopy[i];
-                slope = startPoint.slopeTo(currentPoint);
-                if (slope == previousSlope) {
-                    pointsOnSameSlope.add(currentPoint);
-                } else {
-                    if (pointsOnSameSlope.size() >= 3) {
-                        pointsOnSameSlope.add(startPoint);
-                        addSegment(pointsOnSameSlope);
-                    }
-                    pointsOnSameSlope.clear(); // reset collection of points with the same slope
-                    pointsOnSameSlope.add(currentPoint);
+            // Move through the rest of the array comparing slopes
+            for(int j = i + 2; j < points.length; j++) {
+                // When the same, increment the count because points are collinear
+                if (points[i].slopeTo(points[j]) == currentSlope) {
+                    consecutiveCount++;
+                } else { // Otherwise, reset the count and set the slope to compare
+                    currentSlope = points[i].slopeTo(points[j]);
+                    consecutiveCount = 1;
                 }
-                previousSlope = slope;
-            }
 
-            if (pointsOnSameSlope.size() >= 3) {
-                pointsOnSameSlope.add(startPoint);
-                addSegment(pointsOnSameSlope);
+                if (consecutiveCount >= MIN_COLLINEAR_COUNT) {
+                    segments.add(new LineSegment(points[i], points[j]));
+                }
             }
         }
-    }
-
-    private void addSegment(List<Point> pointsOnSameSlope) {
-        Collections.sort(pointsOnSameSlope);
-        Point startPoint = pointsOnSameSlope.get(0);
-        Point endPoint = pointsOnSameSlope.get(pointsOnSameSlope.size() - 1);
-        segments.add(new LineSegment(startPoint, endPoint));
     }
 
     public int numberOfSegments() { // the number of line segments

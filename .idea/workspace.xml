@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f264ce0-3056-4ffd-b18b-5f8502c500ba" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/collinearPoints/BruteCollinearPoints.java" afterPath="$PROJECT_DIR$/src/collinearPoints/BruteCollinearPoints.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/collinearPoints/collinear.zip" afterPath="$PROJECT_DIR$/src/collinearPoints/collinear.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/collinearPoints/FastCollinearPoints.java" afterPath="$PROJECT_DIR$/src/collinearPoints/FastCollinearPoints.java" />
     </list>
     <ignored path="Algorithm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,8 +72,8 @@
       <file leaf-file-name="Point.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/collinearPoints/Point.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-73">
-              <caret line="84" column="39" selection-start-line="84" selection-start-column="39" selection-end-line="84" selection-end-column="39" />
+            <state relative-caret-position="1767">
+              <caret line="103" column="35" selection-start-line="103" selection-start-column="35" selection-end-line="103" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3444#3445#0" expanded="true" />
@@ -81,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BruteCollinearPoints.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BruteCollinearPoints.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/collinearPoints/BruteCollinearPoints.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+            <state relative-caret-position="912">
+              <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1958#1959#0" expanded="true" />
@@ -97,17 +99,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FastCollinearPoints.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FastCollinearPoints.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/collinearPoints/FastCollinearPoints.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="13" column="71" selection-start-line="13" selection-start-column="71" selection-end-line="13" selection-end-column="71" />
+            <state relative-caret-position="285">
+              <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2574#2575#0" expanded="true" />
-                <element signature="e#2643#2644#0" expanded="true" />
-                <element signature="e#2682#2683#0" expanded="true" />
-                <element signature="e#2776#2777#0" expanded="true" />
+                <element signature="e#2051#2052#0" expanded="true" />
+                <element signature="e#2120#2121#0" expanded="true" />
+                <element signature="e#2159#2160#0" expanded="true" />
+                <element signature="e#2253#2254#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -140,9 +142,9 @@
         <option value="$PROJECT_DIR$/src/dequesAndRandomizedQueues/Deque.java" />
         <option value="$PROJECT_DIR$/src/dequesAndRandomizedQueues/RandomizedQueue.java" />
         <option value="$PROJECT_DIR$/src/dequesAndRandomizedQueues/Permutation.java" />
-        <option value="$PROJECT_DIR$/src/collinearPoints/FastCollinearPoints.java" />
         <option value="$PROJECT_DIR$/src/collinearPoints/Point.java" />
         <option value="$PROJECT_DIR$/src/collinearPoints/BruteCollinearPoints.java" />
+        <option value="$PROJECT_DIR$/src/collinearPoints/FastCollinearPoints.java" />
       </list>
     </option>
   </component>
@@ -830,24 +832,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/collinearPoints/FastCollinearPoints.java">
+    <entry file="file://$PROJECT_DIR$/src/collinearPoints/BruteCollinearPoints.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="71" selection-start-line="13" selection-start-column="71" selection-end-line="13" selection-end-column="71" />
+        <state relative-caret-position="912">
+          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2574#2575#0" expanded="true" />
-            <element signature="e#2643#2644#0" expanded="true" />
-            <element signature="e#2682#2683#0" expanded="true" />
-            <element signature="e#2776#2777#0" expanded="true" />
+            <element signature="e#1958#1959#0" expanded="true" />
+            <element signature="e#2027#2028#0" expanded="true" />
+            <element signature="e#2066#2067#0" expanded="true" />
+            <element signature="e#2118#2119#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/collinearPoints/Point.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-73">
-          <caret line="84" column="39" selection-start-line="84" selection-start-column="39" selection-end-line="84" selection-end-column="39" />
+        <state relative-caret-position="1767">
+          <caret line="103" column="35" selection-start-line="103" selection-start-column="35" selection-end-line="103" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3444#3445#0" expanded="true" />
@@ -856,16 +858,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/collinearPoints/BruteCollinearPoints.java">
+    <entry file="file://$PROJECT_DIR$/src/collinearPoints/FastCollinearPoints.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+        <state relative-caret-position="285">
+          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1958#1959#0" expanded="true" />
-            <element signature="e#2027#2028#0" expanded="true" />
-            <element signature="e#2066#2067#0" expanded="true" />
-            <element signature="e#2118#2119#0" expanded="true" />
+            <element signature="e#2051#2052#0" expanded="true" />
+            <element signature="e#2120#2121#0" expanded="true" />
+            <element signature="e#2159#2160#0" expanded="true" />
+            <element signature="e#2253#2254#0" expanded="true" />
           </folding>
         </state>
       </provider>
