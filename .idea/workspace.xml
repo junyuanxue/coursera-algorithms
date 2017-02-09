@@ -70,10 +70,12 @@
       <file leaf-file-name="Point.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/collinearPoints/Point.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="87" column="9" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
+            <state relative-caret-position="327">
+              <caret line="97" column="35" selection-start-line="97" selection-start-column="35" selection-end-line="97" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3229#3230#0" expanded="true" />
+                <element signature="e#3271#3272#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -796,10 +798,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/collinearPoints/Point.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="87" column="9" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
+        <state relative-caret-position="327">
+          <caret line="97" column="35" selection-start-line="97" selection-start-column="35" selection-end-line="97" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3229#3230#0" expanded="true" />
+            <element signature="e#3271#3272#0" expanded="true" />
           </folding>
         </state>
       </provider>

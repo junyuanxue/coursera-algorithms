@@ -95,6 +95,20 @@ public class Point implements Comparable<Point> {
      * @return the Comparator that defines this ordering on points
      */
     public Comparator<Point> slopeOrder() {
-        /* YOUR CODE HERE */
+        return new SlopeOrdering();
+    }
+
+    private class SlopeOrdering implements Comparator<Point> {
+        @Override
+        public int compare(Point point1, Point point2) {
+            double slopeDifference = slopeTo(point1) - slopeTo(point2);
+            if (slopeDifference > 0) {
+                return 1;
+            } else if (slopeDifference < 0) {
+                return -1;
+            } else {
+                return 0;
+            }
+        }
     }
 }
