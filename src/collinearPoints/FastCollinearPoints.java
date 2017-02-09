@@ -27,21 +27,23 @@ public class FastCollinearPoints {
 
     private ArrayList<LineSegment> findSegments (Point[] points) {
         Point[] pointsCopy = points.clone();
-        Arrays.sort(pointsCopy, pointsCopy.slopeOrder());
+        for (int i = 0; i < pointsCopy.length - (MIN_COLLINEAR_COUNT - 1); i++) {
+            Arrays.sort(pointsCopy, pointsCopy[i].slopeOrder());
 
-        for (int p = 0, first = 1, last = 2; last < pointsCopy.length; last++) {
-            // find last collinear to p point
-            while (last < pointsCopy.length
-                    && pointsCopy[p].slopeTo(pointsCopy[first]) == pointsCopy[p].slopeTo(pointsCopy[last])) {
-                last++;
+            for (int p = 0, first = 1, last = 2; last < pointsCopy.length; last++) {
+                // find last collinear to p point
+                while (last < pointsCopy.length
+                        && pointsCopy[p].slopeTo(pointsCopy[first]) == pointsCopy[p].slopeTo(pointsCopy[last])) {
+                    last++;
+                }
+                // if found at least 3 elements, make segment if it's unique
+                if (last - first >= MIN_COLLINEAR_COUNT - 1
+                        && pointsCopy[p].compareTo(pointsCopy[first]) != 0) {
+                    segments.add(new LineSegment(pointsCopy[p], pointsCopy[last - 1]));
+                }
+                // Try to find next
+                first = last;
             }
-            // if found at least 3 elements, make segment if it's unique
-            if (last - first >= MIN_COLLINEAR_COUNT - 1
-                    && pointsCopy[p].compareTo(pointsCopy[first]) != 0) {
-                segments.add(new LineSegment(pointsCopy[p], pointsCopy[last - 1]));
-            }
-            // Try to find next
-            first = last;
         }
     }
 
