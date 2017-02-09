@@ -7,13 +7,12 @@ import java.util.Arrays;
 
 public class FastCollinearPoints {
     private static final int MIN_COLLINEAR_COUNT = 4;
-    private LineSegment[] segments;
+    private ArrayList<LineSegment> segments = new ArrayList<>();
 
     public FastCollinearPoints(Point[] points) {
         if (points == null) throw new java.lang.NullPointerException();
         checkNoDuplicatedPoints(points);
-        ArrayList<LineSegment> foundSegments = findSegments(points);
-        segments = foundSegments.toArray(new LineSegment[foundSegments.size()]);
+        findSegments(points);
     }
 
     /**
@@ -27,36 +26,31 @@ public class FastCollinearPoints {
      */
 
     private ArrayList<LineSegment> findSegments (Point[] points) {
-        ArrayList<LineSegment> foundSegments = new ArrayList<>();
-        for(int i = 0; i < points.length - 1; i++) {
-            Arrays.sort(points, i + 1, points.length, points[i].slopeOrder());
-            double currentSlope = points[i].slopeTo(points[i + 1]);
-            int consecutiveCount = 1;
+        Point[] pointsCopy = points.clone();
+        Arrays.sort(pointsCopy, pointsCopy.slopeOrder());
 
-            // Move through the rest of the array comparing slopes
-            for(int j = i + 2; j < points.length; j++) {
-                // When the same, increment the count because points are collinear
-                if (points[i].slopeTo(points[j]) == currentSlope) {
-                    consecutiveCount++;
-                } else { // Otherwise, reset the count and set the slope to compare
-                    currentSlope = points[i].slopeTo(points[j]);
-                    consecutiveCount = 1;
-                }
-
-                if (consecutiveCount >= MIN_COLLINEAR_COUNT) {
-                    foundSegments.add(new LineSegment(points[i], points[j]));
-                }
+        for (int p = 0, first = 1, last = 2; last < pointsCopy.length; last++) {
+            // find last collinear to p point
+            while (last < pointsCopy.length
+                    && pointsCopy[p].slopeTo(pointsCopy[first]) == pointsCopy[p].slopeTo(pointsCopy[last])) {
+                last++;
             }
+            // if found at least 3 elements, make segment if it's unique
+            if (last - first >= MIN_COLLINEAR_COUNT - 1
+                    && pointsCopy[p].compareTo(pointsCopy[first]) != 0) {
+                segments.add(new LineSegment(pointsCopy[p], pointsCopy[last - 1]));
+            }
+            // Try to find next
+            first = last;
         }
-        return foundSegments;
     }
 
     public int numberOfSegments() { // the number of line segments
-        return segments.length;
+        return segments.size();
     }
 
     public LineSegment[] segments() { // the line segments
-        return segments;
+        return segments.toArray(new LineSegment[segments.size()]);
     }
 
     private void checkNoDuplicatedPoints(Point[] points) {
