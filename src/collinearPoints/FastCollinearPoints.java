@@ -30,37 +30,37 @@ public class FastCollinearPoints {
 
         for (Point startPoint : points) {
             Arrays.sort(pointsCopy, startPoint.slopeOrder());
-            List<Point> slopePoints = new ArrayList<>();
+            List<Point> pointsOnSameSlope = new ArrayList<>();
             double slope = 0;
             double previousSlope = Double.NEGATIVE_INFINITY;
 
             for (int i = 1; i < pointsCopy.length; i++) {
-                Point otherPoint = pointsCopy[i]
-                slope = startPoint.slopeTo(otherPoint);
+                Point currentPoint = pointsCopy[i]
+                slope = startPoint.slopeTo(currentPoint);
                 if (slope == previousSlope) {
-                    slopePoints.add(otherPoint);
+                    pointsOnSameSlope.add(currentPoint);
                 } else {
-                    if (slopePoints.size() >= 3) {
-                        slopePoints.add(startPoint);
-                        addSegment(slopePoints);
+                    if (pointsOnSameSlope.size() >= 3) {
+                        pointsOnSameSlope.add(startPoint);
+                        addSegment(pointsOnSameSlope);
                     }
-                    slopePoints.clear();
-                    slopePoints.add(otherPoint);
+                    pointsOnSameSlope.clear(); // reset collection of points with the same slope
+                    pointsOnSameSlope.add(currentPoint);
                 }
                 previousSlope = slope;
             }
 
-            if (slopePoints.size() >= 3) {
-                slopePoints.add(startPoint);
-                addSegment(slopePoints);
+            if (pointsOnSameSlope.size() >= 3) {
+                pointsOnSameSlope.add(startPoint);
+                addSegment(pointsOnSameSlope);
             }
         }
     }
 
-    private void addSegment(List<Point> slopePoints) {
-        Collections.sort(slopePoints);
-        Point startPoint = slopePoints.get(0);
-        Point endPoint = slopePoints.get(slopePoints.size() - 1);
+    private void addSegment(List<Point> pointsOnSameSlope) {
+        Collections.sort(pointsOnSameSlope);
+        Point startPoint = pointsOnSameSlope.get(0);
+        Point endPoint = pointsOnSameSlope.get(pointsOnSameSlope.size() - 1);
         segments.add(new LineSegment(startPoint, endPoint));
     }
 
