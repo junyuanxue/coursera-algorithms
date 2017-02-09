@@ -10,12 +10,11 @@ public class BruteCollinearPoints {
 
     public BruteCollinearPoints(Point[] points) { // finds all line segments containing 4 points
         checkNoDuplicatedPoints(points);
-        ArrayList<LineSegment> foundSegments = findSegments(points);
+
         Point[] pointsCopy = Arrays.copyOf(points, points.length);
         Arrays.sort(pointsCopy);
-
-
-
+        ArrayList<LineSegment> foundSegments = findSegments(pointsCopy);
+        segments = foundSegments.toArray(new LineSegment[foundSegments.size()]);
     }
 
     private ArrayList<LineSegment> findSegments(Point[] points) {
@@ -24,23 +23,27 @@ public class BruteCollinearPoints {
             for (int q = p + 1; q < pointsCopy.length - 2; q++) {
                 for (int r = q + 1; r < pointsCopy.length - 1; q++) {
                     for (int s = r + 1; s < pointsCopy.length; s++) {
-                        if (points[p].slopeTo(points[q]) == points[p].slopeTo(points[r]) &&
-                                points[p].slopeTo(points[q]) == points[p].slopeTo(points[s])) {
-                            LineSegment lineSegment = new LineSegment(points[p], points[s]);
-                            foundSegments.add(lineSegment);
+                        Point pp = points[p];
+                        Point qq = points[q];
+                        Point rr = points[r];
+                        Point ss = points[s];
+                        if (pp.slopeTo(qq) == pp.slopeTo(rr) &&
+                                pp.slopeTo(qq) == pp.slopeTo(ss)) {
+                            foundSegments.add(new LineSegment(pp, ss));
                         }
                     }
                 }
             }
         }
+        return foundSegments;
     }
 
     public int numberOfSegments() { // the number of line segments
-
+        return segments.length;
     }
 
     public LineSegment[] segments() { // the line segments
-
+        return segments;
     }
 
     private void checkNoDuplicatedPoints(Point[] points) {
