@@ -25,7 +25,7 @@ public class FastCollinearPoints {
      * with respect to p. If so, these points, together with p, are collinear.
      */
 
-    private ArrayList<LineSegment> findSegments (Point[] points) {
+    private void findSegments (Point[] points) {
         Point[] pointsCopy = points.clone();
         for (int i = 0; i < pointsCopy.length - (MIN_COLLINEAR_COUNT - 1); i++) {
             Arrays.sort(pointsCopy, pointsCopy[i].slopeOrder());
