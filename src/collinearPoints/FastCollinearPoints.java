@@ -1,22 +1,18 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * A fast solution of finding colinear points in a set of points.
  */
 
 public class FastCollinearPoints {
-    private LineSegment[] segments;
+    private List<LineSegment> segments = new ArrayList<>();
 
     public FastCollinearPoints(Point[] points) { // finds all line segments containing 4 or more points
         checkNoDuplicatedPoints(points);
-
-
-
+        compareSlopes(points);
     }
 
-    private void banana (Point[] points) {
+    private void compareSlopes (Point[] points) {
         Point[] pointsCopy = Arrays.copyOf(points, points.length);
 
         for (Point startPoint : points) {
@@ -33,7 +29,7 @@ public class FastCollinearPoints {
                 } else {
                     if (slopePoints.size() >= 3) {
                         slopePoints.add(startPoint);
-                        addSegmentIfNew(slopePoints, previousSlope);
+                        addSegment(slopePoints);
                     }
                     slopePoints.clear();
                     slopePoints.add(otherPoint);
@@ -43,13 +39,20 @@ public class FastCollinearPoints {
 
             if (slopePoints.size() >= 3) {
                 slopePoints.add(startPoint);
-                addSegmentIfNew(slopePoints, previousSlope);
+                addSegment(slopePoints);
             }
         }
     }
 
+    private void addSegment(List<Point> slopePoints) {
+        Collections.sort(slopePoints);
+        Point startPoint = slopePoints.get(0);
+        Point endPoint = slopePoints.get(slopePoints.size() - 1);
+        segments.add(new LineSegment(startPoint, endPoint));
+    }
+
     public int numberOfSegments() { // the number of line segments
-        return segments.length;
+        return segments.size();
     }
 
     public LineSegment[] segments() { // the line segments
