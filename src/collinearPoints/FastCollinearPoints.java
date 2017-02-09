@@ -35,7 +35,7 @@ public class FastCollinearPoints {
             double previousSlope = Double.NEGATIVE_INFINITY;
 
             for (int i = 1; i < pointsCopy.length; i++) {
-                Point currentPoint = pointsCopy[i]
+                Point currentPoint = pointsCopy[i];
                 slope = startPoint.slopeTo(currentPoint);
                 if (slope == previousSlope) {
                     pointsOnSameSlope.add(currentPoint);
