@@ -15,6 +15,16 @@ public class FastCollinearPoints {
         compareSlopes(points);
     }
 
+    /**
+     * Given a point p, the following method determines whether p
+     * participates in a set of 4 or more collinear points.
+     * 1) Think of p as the origin.
+     * 2) For each other point q, determine the slope it makes with p.
+     * 3) Sort the points according to the slopes they makes with p.
+     * 4) Check if any 3 (or more) adjacent points in the sorted order have equal slopes
+     * with respect to p. If so, these points, together with p, are collinear.
+     */
+
     private void compareSlopes (Point[] points) {
         Point[] pointsCopy = Arrays.copyOf(points, points.length);
 
