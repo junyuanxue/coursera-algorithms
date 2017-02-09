@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.Collections;
 
 /**
  * A fast solution of finding colinear points in a set of points.
@@ -9,12 +7,13 @@ import java.util.Collections;
 
 public class FastCollinearPoints {
     private static final int MIN_COLLINEAR_COUNT = 4;
-    private List<LineSegment> segments = new ArrayList<>();
+    private LineSegment[] segments;
 
     public FastCollinearPoints(Point[] points) {
         if (points == null) throw new java.lang.NullPointerException();
         checkNoDuplicatedPoints(points);
-        findSegments(points);
+        ArrayList<LineSegment> foundSegments = findSegments(points);
+        segments = foundSegments.toArray(new LineSegment[foundSegments.size()]);
     }
 
     /**
@@ -27,7 +26,8 @@ public class FastCollinearPoints {
      * with respect to p. If so, these points, together with p, are collinear.
      */
 
-    private void findSegments (Point[] points) {
+    private ArrayList<LineSegment> findSegments (Point[] points) {
+        ArrayList<LineSegment> foundSegments = new ArrayList<>();
         for(int i = 0; i < points.length - 1; i++) {
             Arrays.sort(points, i + 1, points.length, points[i].slopeOrder());
             double currentSlope = points[i].slopeTo(points[i + 1]);
@@ -44,18 +44,19 @@ public class FastCollinearPoints {
                 }
 
                 if (consecutiveCount >= MIN_COLLINEAR_COUNT) {
-                    segments.add(new LineSegment(points[i], points[j]));
+                    foundSegments.add(new LineSegment(points[i], points[j]));
                 }
             }
         }
+        return foundSegments;
     }
 
     public int numberOfSegments() { // the number of line segments
-        return segments.size();
+        return segments.length;
     }
 
     public LineSegment[] segments() { // the line segments
-        return segments.toArray(new LineSegment[segments.size()]);
+        return segments;
     }
 
     private void checkNoDuplicatedPoints(Point[] points) {
