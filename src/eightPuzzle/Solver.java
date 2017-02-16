@@ -67,7 +67,7 @@ public class Solver {
 
     // is the initial board solvable?
     public boolean isSolvable() {
-
+        return solvable;g
     }
 
     // min number of moves to solve initial board; -1 if unsolvable
