@@ -1,10 +1,20 @@
 public class Board {
-    public Board(int[][] blocks) { // construct a board from an n-by-n array of blocks
-        // (where blocks[i][j] = block in row i, column j)
+    private int n;
+    private final int[][] board; // 2-d array
 
+    /**
+     * Construct a board from an n-by-n array of blocks
+     * (where blocks[i][j] = block in row i, column j)
+     */
+    public Board(int[][] blocks) {
+        n = blocks.length;
+        board = copyBoard(blocks);
     }
 
-    public int dimension() { // board dimension n
+    /**
+     * board dimension n
+     */
+    public int dimension() {
 
     }
 
@@ -34,6 +44,16 @@ public class Board {
 
     public String toString() { // string representation of this board (in the output format specified below)
 
+    }
+
+    private int[][] copyBoard(int[][] blocks) {
+        int[][] board = new int[blocks.length][blocks.length];
+        for (int i = 0; i < blocks.length; i++) {
+            for (int j = 0; j < blocks.length; j++) {
+                board[i][j] = blocks[i][j];
+            }
+        }
+        return board;
     }
 
     public static void main(String[] args) {
