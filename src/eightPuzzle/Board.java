@@ -18,7 +18,10 @@ public class Board {
         return n;
     }
 
-    public int hamming() { // number of blocks out of place
+    /**
+     * number of blocks out of place
+     */
+    public int hamming() {
         int count = 0;
         for (int i = 0; i < n * n; i++) {
             int row = i / n;
@@ -28,12 +31,21 @@ public class Board {
         return count;
     }
 
-    public int manhattan() { // sum of Manhattan distances between blocks and goal
-
+    /**
+     * sum of Manhattan distances between blocks and goal
+     */
+    public int manhattan() {
+        int count = 0;
+        return count;
     }
 
     public boolean isGoal() { // is this board the goal board?
-
+        for (int i = 0; i < n * (n - 1); i++) {
+            int row = i / n;
+            int col = i % n;
+            if (board[row][col] != i + 1) return false;
+        }
+        return true;
     }
 
     public Board twin() { // a board that is obtained by exchanging any pair of blocks
