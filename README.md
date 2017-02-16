@@ -7,6 +7,7 @@ Coding assignments for [Algorithms Part I on Coursera](https://www.coursera.org/
 * Week 1: [Percolation](http://coursera.cs.princeton.edu/algs4/assignments/percolation.html)
 * Week 2: [Deques and Randomized Queues](http://coursera.cs.princeton.edu/algs4/assignments/queues.html)
 * Week 3: [Collinear Points](http://coursera.cs.princeton.edu/algs4/assignments/collinear.html)
+* Week 4: [8 Puzzle](http://coursera.cs.princeton.edu/algs4/assignments/8puzzle.html)
 
 ## Tools :wrench:
 * Java
