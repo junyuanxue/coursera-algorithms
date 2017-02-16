@@ -32,6 +32,37 @@ public class Solver {
         swapSolvable = false;
 
         queue = new MinPQ<Node>(boardComparator);
+        swapQueue = new MinPQ<Node>(boardComparator);
+
+        Node initialNode = new Node(initial, null);
+        queue.insert(initialNode);
+
+        Node initialSwap = new Node(initial.twin(), null);
+        swapQueue.insert(initialSwap);
+
+        while (!solvable && !swapSolvable) {
+            solvable = canSolveStep(queue);
+            swapSolvable = canSolveStep(swapQueue);
+        }
+    }
+
+    private boolean canSolveStep(MinPQ<Node> queue) {
+        // Pop min from queue, check if solved, if not, queue neighbours
+        Node current = queue.delMin();
+
+        if (current.board.isGoal()) {
+            endNode = current;
+            return true;
+        }
+
+        for (Board board : current.board.neighbors()) {
+            if (current.parent == null || !board.equals(current.parent.board)) {
+                Node neighbor = new Node(board, current);
+                queue.insert(neighbor);
+            }
+        }
+
+        return false;
     }
 
     // is the initial board solvable?
