@@ -42,13 +42,13 @@
       <file leaf-file-name="Solver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/eightPuzzle/Solver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="69" column="25" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
+            <state relative-caret-position="396">
+              <caret line="92" column="7" selection-start-line="92" selection-start-column="7" selection-end-line="92" selection-end-column="7" />
               <folding>
                 <element signature="e#573#574#0" expanded="true" />
                 <element signature="e#654#655#0" expanded="true" />
-                <element signature="e#1922#1923#0" expanded="true" />
-                <element signature="e#1954#1955#0" expanded="true" />
+                <element signature="e#1938#1939#0" expanded="true" />
+                <element signature="e#1969#1970#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -845,13 +845,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/eightPuzzle/Solver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="69" column="25" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
+        <state relative-caret-position="396">
+          <caret line="92" column="7" selection-start-line="92" selection-start-column="7" selection-end-line="92" selection-end-column="7" />
           <folding>
             <element signature="e#573#574#0" expanded="true" />
             <element signature="e#654#655#0" expanded="true" />
-            <element signature="e#1922#1923#0" expanded="true" />
-            <element signature="e#1954#1955#0" expanded="true" />
+            <element signature="e#1938#1939#0" expanded="true" />
+            <element signature="e#1969#1970#0" expanded="true" />
           </folding>
         </state>
       </provider>

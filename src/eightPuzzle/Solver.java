@@ -65,17 +65,32 @@ public class Solver {
         return false;
     }
 
-    // is the initial board solvable?
+    /**
+     * is the initial board solvable?
+     */
     public boolean isSolvable() {
-        return solvable;g
+        return solvable;
     }
 
-    // min number of moves to solve initial board; -1 if unsolvable
+    /**
+     * min number of moves to solve initial board; -1 if unsolvable
+     */
     public int moves() {
-
+        if (isSolvable()) {
+            Node current = endNode;
+            int moves = 0;
+            while (current.parent != null) {
+                moves++;
+                current = current.parent; // trace back to initial node
+            }
+            return moves;
+        }
+        return -1;
     }
 
-    // sequence of boards in a shortest solution; null if unsolvable
+    /**
+     * sequence of boards in a shortest solution; null if unsolvable
+     */
     public Iterable<Board> solution() {
 
     }
