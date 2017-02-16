@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Board {
     private int n;
@@ -101,7 +103,34 @@ public class Board {
      * all neighboring boards
      */
     public Iterable<Board> neighbors() {
-
+        List<Board> boards = new ArrayList<Board>();
+        int[] moveX = {1, -1, 0, 0};
+        int[] moveY = {0, 0, 1, -1};
+        boolean hasFound = false;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (board[i][j] == 0) {
+                    for (int k = 0; k < 4; k++) {
+                        int neighbourRow = i + moveX[k];
+                        int neighbourCol = i + moveY[k];
+                        if(neighbourRow >= 0
+                                && neighbourCol >= 0
+                                && neighbourRow < n
+                                && neighbourCol < n) {
+                            int[][] copy = copyBoard(board);
+                            copy[i][j] = board[neighbourRow][neighbourCol];
+                            copy[neighbourRow][neighbourCol] = board[i][j];
+                            Board foundBoard = new Board(copy);
+                            boards.add(foundBoard);
+                        }
+                    }
+                    hasFound = true;
+                    break;
+                }
+            }
+            if (hasFound) break;
+        }
+        return boards;
     }
 
     /**
