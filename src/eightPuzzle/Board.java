@@ -58,7 +58,21 @@ public class Board {
     }
 
     public Board twin() { // a board that is obtained by exchanging any pair of blocks
-
+        int[][] copy = copyBoard(board);
+        boolean hasSwapped = false;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n - 1; j++) {
+                if (copy[i][j] > 0 && copy[i][j+1] > 0) {
+                    int currentValue = copy[i][j];
+                    copy[i][j] = copy[i][j+1];
+                    copy[i][j+1] = currentValue;
+                    hasSwapped = true;
+                    break;
+                }
+            }
+            if (hasSwapped) break;
+        }
+        return new Board(copy);
     }
 
     public boolean equals(Object y) { // does this board equal y?
