@@ -92,7 +92,17 @@ public class Solver {
      * sequence of boards in a shortest solution; null if unsolvable
      */
     public Iterable<Board> solution() {
-
+        if (isSolvable()) {
+            Stack<Board> solution = new Stack<Board>();
+            Node current = endNode;
+            solution.push(endNode.board);
+            while (current.parent != null) {
+                solution.push(current.parent.board);
+                current = current.parent;
+            }
+            return solution;
+        }
+        return null;
     }
 
     public static void main(String[] args) {
