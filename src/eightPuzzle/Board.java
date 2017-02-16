@@ -15,11 +15,17 @@ public class Board {
      * board dimension n
      */
     public int dimension() {
-
+        return n;
     }
 
     public int hamming() { // number of blocks out of place
-
+        int count = 0;
+        for (int i = 0; i < n * n; i++) {
+            int row = i / n;
+            int col = i % n;
+            if (board[row][col] == i + 1) count++;
+        }
+        return count;
     }
 
     public int manhattan() { // sum of Manhattan distances between blocks and goal
