@@ -43,7 +43,7 @@ public class Board {
         for (int i = 0; i < n * n; i++) {
             int row = i / n;
             int col = i % n;
-            int currentNum = board[row][col]
+            int currentNum = board[row][col];
             if (currentNum == 0) continue;
             int goalRow = (currentNum - 1) / n;
             int goalCol = (currentNum - 1) % n;
