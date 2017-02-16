@@ -97,12 +97,26 @@ public class Board {
         return true;
     }
 
-    public Iterable<Board> neighbors() { // all neighboring boards
+    /**
+     * all neighboring boards
+     */
+    public Iterable<Board> neighbors() {
 
     }
 
-    public String toString() { // string representation of this board (in the output format specified below)
-
+    /**
+     * string representation of this board
+     */
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(n + "\n");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                stringBuilder.append(this.board[i][j]+ " ");
+            }
+            stringBuilder.append("\n");
+        }
+        return stringBuilder.toString();
     }
 
     private int[][] copyBoard(int[][] blocks) {
