@@ -27,11 +27,11 @@
       <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/eightPuzzle/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
+            <state relative-caret-position="427">
+              <caret line="96" column="20" selection-start-line="96" selection-start-column="20" selection-end-line="96" selection-end-column="20" />
               <folding>
-                <element signature="e#386#387#0" expanded="true" />
-                <element signature="e#410#411#0" expanded="true" />
+                <element signature="e#412#413#0" expanded="true" />
+                <element signature="e#436#437#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -814,11 +814,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/eightPuzzle/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
+        <state relative-caret-position="427">
+          <caret line="96" column="20" selection-start-line="96" selection-start-column="20" selection-end-line="96" selection-end-column="20" />
           <folding>
-            <element signature="e#386#387#0" expanded="true" />
-            <element signature="e#410#411#0" expanded="true" />
+            <element signature="e#412#413#0" expanded="true" />
+            <element signature="e#436#437#0" expanded="true" />
           </folding>
         </state>
       </provider>

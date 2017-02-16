@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Board {
     private int n;
     private final int[][] board; // 2-d array
@@ -48,7 +50,10 @@ public class Board {
         return count;
     }
 
-    public boolean isGoal() { // is this board the goal board?
+    /**
+     * is this board the goal board?
+     */
+    public boolean isGoal() {
         for (int i = 0; i < n * (n - 1); i++) {
             int row = i / n;
             int col = i % n;
@@ -57,7 +62,10 @@ public class Board {
         return true;
     }
 
-    public Board twin() { // a board that is obtained by exchanging any pair of blocks
+    /**
+     * a board that is obtained by exchanging any pair of blocks
+     */
+    public Board twin() {
         int[][] copy = copyBoard(board);
         boolean hasSwapped = false;
         for (int i = 0; i < n; i++) {
@@ -75,8 +83,18 @@ public class Board {
         return new Board(copy);
     }
 
-    public boolean equals(Object y) { // does this board equal y?
-
+    /**
+     * does this board equal y?
+     */
+    public boolean equals(Object y) {
+        if (y == this) return true;
+        if (y == null) return false;
+        if(!(y instanceof Board)) return false;
+        if(((Board)y).n != n) return false;
+        for (int r = 0; r < this.n; r++) {
+            if (!Arrays.equals(this.board[r], ((Board)y).board[r])) return false;
+        }
+        return true;
     }
 
     public Iterable<Board> neighbors() { // all neighboring boards
