@@ -36,6 +36,15 @@ public class Board {
      */
     public int manhattan() {
         int count = 0;
+        for (int i = 0; i < n * n; i++) {
+            int row = i / n;
+            int col = i % n;
+            int currentNum = board[row][col]
+            if (currentNum == 0) continue;
+            int goalRow = (currentNum - 1) / n;
+            int goalCol = (currentNum - 1) % n;
+            count += Math.abs(goalRow - row) + Math.abs(goalCol - col);
+        }
         return count;
     }
 
