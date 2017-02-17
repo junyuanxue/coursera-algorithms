@@ -1,4 +1,5 @@
 import java.util.Comparator;
+import edu.princeton.cs.algs4.MinPQ;
 
 public class Solver {
     private MinPQ<Node> queue;
