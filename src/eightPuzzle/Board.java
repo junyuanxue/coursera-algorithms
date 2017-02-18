@@ -30,7 +30,8 @@ public class Board {
         for (int i = 0; i < n * n; i++) {
             int row = i / n;
             int col = i % n;
-            if (board[row][col] != i + 1) count++;
+            int number = board[row][col];
+            if (number != 0 && number != i + 1) count++;
         }
         return count;
     }
@@ -91,10 +92,10 @@ public class Board {
     public boolean equals(Object y) {
         if (y == this) return true;
         if (y == null) return false;
-        if(!(y instanceof Board)) return false;
-        if(((Board)y).n != n) return false;
+        if (!(y instanceof Board)) return false;
+        if (((Board) y).n != n) return false;
         for (int r = 0; r < this.n; r++) {
-            if (!Arrays.equals(this.board[r], ((Board)y).board[r])) return false;
+            if (!Arrays.equals(this.board[r], ((Board) y).board[r])) return false;
         }
         return true;
     }
@@ -106,7 +107,7 @@ public class Board {
         int spaceRow = 0;
         int spaceCol = 0;
 
-        //Find the empty square
+        // Find the empty square
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (board[i][j] == 0) {
@@ -118,7 +119,7 @@ public class Board {
 
         List<Board> neighbors = new LinkedList<Board>();
 
-        //Down
+        // Down
         if (spaceRow < n - 1) {
             int[][] downBlocks = new int[n][n];
             for (int i = 0; i < n; i++) {
@@ -134,7 +135,7 @@ public class Board {
             neighbors.add(new Board(downBlocks));
         }
 
-        //Up
+        // Up
         if (spaceRow > 0) {
             int[][] upBlocks = new int[n][n];
             for (int i = 0; i < n; i++) {
@@ -150,7 +151,7 @@ public class Board {
             neighbors.add(new Board(upBlocks));
         }
 
-        //Left
+        // Left
         if (spaceCol > 0) {
             int[][] leftBlocks = new int[n][n];
             for (int i = 0; i < n; i++) {
