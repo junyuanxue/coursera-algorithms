@@ -66,10 +66,7 @@ public class Solver {
      * min number of moves to solve initial board; -1 if unsolvable
      */
     public int moves() {
-        if (isSolvable()) {
-            return lastMove.numOfMoves;
-        }
-        return -1;
+        return isSolvable() ? lastMove.numOfMoves : -1;
     }
 
     /**
