@@ -1,6 +1,6 @@
 import java.util.Arrays;
 import java.util.List;
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Board {
     private int n;
@@ -103,34 +103,114 @@ public class Board {
      * all neighboring boards
      */
     public Iterable<Board> neighbors() {
-        List<Board> boards = new ArrayList<Board>();
-        int[] moveX = {1, -1, 0, 0};
-        int[] moveY = {0, 0, 1, -1};
-        boolean hasFound = false;
+        int spaceRow = 0;
+        int spaceCol = 0;
+
+        //Find the empty square
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (board[i][j] == 0) {
-                    for (int k = 0; k < 4; k++) {
-                        int neighbourRow = i + moveX[k];
-                        int neighbourCol = i + moveY[k];
-                        if(neighbourRow >= 0
-                                && neighbourCol >= 0
-                                && neighbourRow < n
-                                && neighbourCol < n) {
-                            int[][] copy = copyBoard(board);
-                            copy[i][j] = board[neighbourRow][neighbourCol];
-                            copy[neighbourRow][neighbourCol] = board[i][j];
-                            Board foundBoard = new Board(copy);
-                            boards.add(foundBoard);
-                        }
-                    }
-                    hasFound = true;
-                    break;
+                    spaceRow = i;
+                    spaceCol = j;
                 }
             }
-            if (hasFound) break;
         }
-        return boards;
+
+        List<Board> neighbors = new LinkedList<Board>();
+
+        //Down
+        if (spaceRow < n - 1) {
+            int[][] downBlocks = new int[n][n];
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n(); j++) {
+                    downBlocks[i][j] = board[i][j];
+                }
+            }
+
+            int temp = downBlocks[spaceRow][spaceCol];
+            downBlocks[spaceRow][spaceCol] = downBlocks[spaceRow + 1][spaceCol];
+            downBlocks[spaceRow + 1][spaceCol] = temp;
+
+            neighbors.add(new Board(downBlocks));
+        }
+
+        //Up
+        if (spaceRow > 0) {
+            int[][] upBlocks = new int[n][n];
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    upBlocks[i][j] = board[i][j];
+                }
+            }
+
+            int temp = upBlocks[spaceRow][spaceCol];
+            upBlocks[spaceRow][spaceCol] = upBlocks[spaceRow - 1][spaceCol];
+            upBlocks[spaceRow - 1][spaceCol] = temp;
+
+            neighbors.add(new Board(upBlocks));
+        }
+
+        //Left
+        if (spaceCol > 0) {
+            int[][] leftBlocks = new int[n][n];
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    leftBlocks[i][j] = board[i][j];
+                }
+            }
+
+            int temp = leftBlocks[spaceRow][spaceCol];
+            leftBlocks[spaceRow][spaceCol] = leftBlocks[spaceRow][spaceCol - 1];
+            leftBlocks[spaceRow][spaceCol - 1] = temp;
+
+            neighbors.add(new Board(leftBlocks));
+        }
+
+        //Right
+        if (spaceCol < dimension() - 1) {
+            int[][] rightBlocks = new int[n][n];
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    rightBlocks[i][j] = board[i][j];
+                }
+            }
+
+            int temp = rightBlocks[spaceRow][spaceCol];
+            rightBlocks[spaceRow][spaceCol] = rightBlocks[spaceRow][spaceCol + 1];
+            rightBlocks[spaceRow][spaceCol + 1] = temp;
+
+            neighbors.add(new Board(rightBlocks));
+        }
+
+        return neighbors;
+//        List<Board> boards = new ArrayList<Board>();
+//        int[] moveX = {1, -1, 0, 0};
+//        int[] moveY = {0, 0, 1, -1};
+//        boolean hasFound = false;
+//        for (int i = 0; i < n; i++) {
+//            for (int j = 0; j < n; j++) {
+//                if (board[i][j] == 0) {
+//                    for (int k = 0; k < 4; k++) {
+//                        int neighbourRow = i + moveX[k];
+//                        int neighbourCol = i + moveY[k];
+//                        if(neighbourRow >= 0
+//                                && neighbourCol >= 0
+//                                && neighbourRow < n
+//                                && neighbourCol < n) {
+//                            int[][] copy = copyBoard(board);
+//                            copy[i][j] = board[neighbourRow][neighbourCol];
+//                            copy[neighbourRow][neighbourCol] = board[i][j];
+//                            Board foundBoard = new Board(copy);
+//                            boards.add(foundBoard);
+//                        }
+//                    }
+//                    hasFound = true;
+//                    break;
+//                }
+//            }
+//            if (hasFound) break;
+//        }
+//        return boards;
     }
 
     /**

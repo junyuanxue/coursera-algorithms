@@ -27,13 +27,13 @@
       <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/eightPuzzle/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+            <state relative-caret-position="2100">
+              <caret line="138" column="45" selection-start-line="138" selection-start-column="45" selection-end-line="138" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#463#464#0" expanded="true" />
-                <element signature="e#487#488#0" expanded="true" />
-                <element signature="e#2786#2793#0" expanded="true" />
+                <element signature="e#464#465#0" expanded="true" />
+                <element signature="e#488#489#0" expanded="true" />
+                <element signature="e#3107#3114#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -42,8 +42,8 @@
       <file leaf-file-name="Solver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/eightPuzzle/Solver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+            <state relative-caret-position="-79">
+              <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#719#720#0" expanded="true" />
@@ -829,8 +829,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/eightPuzzle/Solver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+        <state relative-caret-position="-79">
+          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#719#720#0" expanded="true" />
@@ -843,13 +843,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/eightPuzzle/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+        <state relative-caret-position="2100">
+          <caret line="138" column="45" selection-start-line="138" selection-start-column="45" selection-end-line="138" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-            <element signature="e#487#488#0" expanded="true" />
-            <element signature="e#2786#2793#0" expanded="true" />
+            <element signature="e#464#465#0" expanded="true" />
+            <element signature="e#488#489#0" expanded="true" />
+            <element signature="e#3107#3114#0" expanded="true" />
           </folding>
         </state>
       </provider>
