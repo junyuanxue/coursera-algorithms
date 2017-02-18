@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f264ce0-3056-4ffd-b18b-5f8502c500ba" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/eightPuzzle/8puzzle.zip" afterPath="$PROJECT_DIR$/src/eightPuzzle/8puzzle.zip" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/eightPuzzle/Board.java" afterPath="$PROJECT_DIR$/src/eightPuzzle/Board.java" />
     </list>
     <ignored path="Algorithm.iws" />
@@ -28,13 +27,13 @@
       <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/eightPuzzle/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+            <state relative-caret-position="1440">
+              <caret line="72" column="35" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#464#465#0" expanded="true" />
-                <element signature="e#488#489#0" expanded="true" />
-                <element signature="e#3160#3167#0" expanded="true" />
+                <element signature="e#474#475#0" expanded="true" />
+                <element signature="e#498#499#0" expanded="true" />
+                <element signature="e#3185#3192#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -43,8 +42,8 @@
       <file leaf-file-name="Solver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/eightPuzzle/Solver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-79">
-              <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+            <state relative-caret-position="440">
+              <caret line="65" column="13" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#719#720#0" expanded="true" />
@@ -830,8 +829,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/eightPuzzle/Solver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-79">
-          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+        <state relative-caret-position="440">
+          <caret line="65" column="13" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#719#720#0" expanded="true" />
@@ -844,13 +843,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/eightPuzzle/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+        <state relative-caret-position="1440">
+          <caret line="72" column="35" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#488#489#0" expanded="true" />
-            <element signature="e#3160#3167#0" expanded="true" />
+            <element signature="e#474#475#0" expanded="true" />
+            <element signature="e#498#499#0" expanded="true" />
+            <element signature="e#3185#3192#0" expanded="true" />
           </folding>
         </state>
       </provider>

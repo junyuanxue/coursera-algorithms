@@ -11,8 +11,8 @@ public class Board {
      * (where blocks[i][j] = block in row i, column j)
      */
     public Board(int[][] blocks) {
-        n = blocks.length;
-        board = copyBoard(blocks);
+        this.n = blocks.length;
+        this.board = copyBoard(blocks);
     }
 
     /**
@@ -30,7 +30,7 @@ public class Board {
         for (int i = 0; i < n * n; i++) {
             int row = i / n;
             int col = i % n;
-            int number = board[row][col];
+            int number = this.board[row][col];
             if (number != 0 && number != i + 1) count++;
         }
         return count;
@@ -60,7 +60,7 @@ public class Board {
         for (int i = 0; i < n * (n - 1); i++) {
             int row = i / n;
             int col = i % n;
-            if (board[row][col] != i + 1) return false;
+            if (this.board[row][col] != i + 1) return false;
         }
         return true;
     }
@@ -69,7 +69,7 @@ public class Board {
      * a board that is obtained by exchanging any pair of blocks
      */
     public Board twin() {
-        int[][] copy = copyBoard(board);
+        int[][] copy = copyBoard(this.board);
         boolean hasSwapped = false;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n - 1; j++) {
@@ -167,7 +167,7 @@ public class Board {
             neighbors.add(new Board(leftBlocks));
         }
 
-        //Right
+        // Right
         if (spaceCol < dimension() - 1) {
             int[][] rightBlocks = new int[n][n];
             for (int i = 0; i < n; i++) {
@@ -184,34 +184,6 @@ public class Board {
         }
 
         return neighbors;
-//        List<Board> boards = new ArrayList<Board>();
-//        int[] moveX = {1, -1, 0, 0};
-//        int[] moveY = {0, 0, 1, -1};
-//        boolean hasFound = false;
-//        for (int i = 0; i < n; i++) {
-//            for (int j = 0; j < n; j++) {
-//                if (board[i][j] == 0) {
-//                    for (int k = 0; k < 4; k++) {
-//                        int neighbourRow = i + moveX[k];
-//                        int neighbourCol = i + moveY[k];
-//                        if(neighbourRow >= 0
-//                                && neighbourCol >= 0
-//                                && neighbourRow < n
-//                                && neighbourCol < n) {
-//                            int[][] copy = copyBoard(board);
-//                            copy[i][j] = board[neighbourRow][neighbourCol];
-//                            copy[neighbourRow][neighbourCol] = board[i][j];
-//                            Board foundBoard = new Board(copy);
-//                            boards.add(foundBoard);
-//                        }
-//                    }
-//                    hasFound = true;
-//                    break;
-//                }
-//            }
-//            if (hasFound) break;
-//        }
-//        return boards;
     }
 
     /**
@@ -239,7 +211,5 @@ public class Board {
         return board;
     }
 
-    public static void main(String[] args) {
-
-    }
+    public static void main(String[] args) {}
 }
