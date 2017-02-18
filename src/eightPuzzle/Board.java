@@ -30,7 +30,7 @@ public class Board {
         for (int i = 0; i < n * n; i++) {
             int row = i / n;
             int col = i % n;
-            if (board[row][col] == i + 1) count++;
+            if (board[row][col] != i + 1) count++;
         }
         return count;
     }
