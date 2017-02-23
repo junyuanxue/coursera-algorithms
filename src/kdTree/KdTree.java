@@ -60,8 +60,46 @@ public class KdTree {
         }
 
         if (!p.equals(currentPosition.value)) {
-            if (currentPosition.division == VERTICAL) {
-
+            if (currentPosition.division == VERTICAL) { // slice vertically
+                if (p.x() < currentPosition.value.x()) {
+                    if (currentPosition.left == null) {
+                        newPoint.division = HORIZONTAL;
+                        currentPosition.left = newPoint;
+                        size++;
+                        return;
+                    } else {
+                        currentPosition = currentPosition.left;
+                    }
+                } else {
+                    if (currentPosition.right == null) {
+                        newPoint.division = HORIZONTAL;
+                        currentPosition.right = newPoint;
+                        size++;
+                        return;
+                    } else {
+                        currentPosition = currentPosition.right;
+                    }
+                }
+            } else { // slice horizontally
+                if (p.y() < currentPosition.value.y()) {
+                    if (currentPosition.left == null) {
+                        newPoint.division = VERTICAL;
+                        currentPosition.left = newPoint;
+                        size++;
+                        return;
+                    } else {
+                        currentPosition = currentPosition.left;
+                    }
+                } else {
+                    if (currentPosition.right == null) {
+                        newPoint.division = VERTICAL;
+                        currentPosition.right = newPoint;
+                        size++;
+                        return;
+                    } else {
+                        currentPosition= currentPosition.right;
+                    }
+                }
             }
         }
     }
