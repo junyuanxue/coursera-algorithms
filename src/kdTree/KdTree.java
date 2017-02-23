@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 public class KdTree {
     private static final boolean VERTICAL = true;
     private static final boolean HORIZONTAL = false;
@@ -158,7 +160,39 @@ public class KdTree {
      * all points that are inside the rectangle
      * */
     public Iterable<Point2D> range(RectHV rect) {
+        if (rect == null) throw new NullPointerException();
+        containedPoints = new LinkedList<Point2D>();
+        checkPointsInRange(root, rect);
+        return containedPoints;
+    }
 
+    private checkPointsInRange(Node root, RectHV rect) {
+        if (node == null) return;
+        if (node.division == VERTICAL) {
+            if (node.value.x() > rect.xmax()) {
+                checkPointsInRange(node.left, rect); // go to the left
+            } else if (node.value.x() < rect.xmin()) {
+                checkPointsInRange(node.right, rect); // go to the right
+            } else { // go both ways and check self
+                checkPointsInRange(node.left, rect);
+                checkPointsInRange(node.right, rect);
+                if (rect.contains(node.value)) {
+                    containedPoints.add(node.value);
+                }
+            }
+        } else {
+            if(node.value.y() > rect.ymax()) {
+                checkPointsInRange(node.left, rect); // go to the left
+            } else if (node.value.y() < rect.ymin()) {
+                checkPointsInRange(node.right, rect); // go to the right
+            } else { // go both ways and check self
+                checkPointsInRange(node.left, rect);
+                checkPointsInRange(node.right, rect);
+                if (rect.contains(node.value)) {
+                    containedPoints.add(node.value);
+                }
+            }
+        }
     }
 
     /**
