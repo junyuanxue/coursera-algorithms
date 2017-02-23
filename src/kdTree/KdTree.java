@@ -27,6 +27,7 @@ public class KdTree {
      * */
     public KdTree() {
         root = null;
+        size = 0;
     }
 
     /**
@@ -40,14 +41,29 @@ public class KdTree {
      * number of points in the set
      * */
     public int size() {
-        return size() == 0;
+        return size;
     }
 
     /**
      * add the point to the set (if it is not already in the set)
      * */
     public void insert(Point2D p) {
+        if (p == null) throw new NullPointerException();
 
+        Node newPoint = new Node(p);
+        Node currentPosition = root;
+        if (root == null) {
+            newPoint.division = VERTICAL;
+            root = newPoint;
+            size++;
+            return;
+        }
+
+        if (!p.equals(currentPosition.value)) {
+            if (currentPosition.division == VERTICAL) {
+
+            }
+        }
     }
 
     /**
