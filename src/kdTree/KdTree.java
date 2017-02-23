@@ -108,7 +108,29 @@ public class KdTree {
      * does the set contain point p?
      * */
     public boolean contains(Point2D p) {
+        if (p == null) throw new NullPointerException();
 
+        Node currentPosition = root;
+        while (currentPosition != null) {
+            if(p.equals(currentPosition.value)) {
+                return true;
+            }
+
+            if (currPos.division == VERTICAL) { // use first bit to determine if level is even or odd
+                if (p.x() < currentPosition.value.x()) { // vertical slice
+                    currentPosition = currentPosition.left;
+                } else {
+                    currentPosition = currentPosition.right;
+                }
+            } else {
+                if(p.y() < currentPosition.value.y()) { // horizontal slice
+                    currentPosition = currentPosition.left;
+                } else {
+                    currentPosition = currentPosition.right;
+                }
+            }
+        }
+        return false;
     }
 
     /**
