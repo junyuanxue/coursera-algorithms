@@ -137,7 +137,21 @@ public class KdTree {
      * draw all points to standard draw
      * */
     public void draw() {
+        if (root != null) {
+            drawNodes(root);
+        }
+    }
 
+    private void drawNodes(Node node) {
+        node.value.draw();
+
+        if (node.right != null) {
+            drawNodes(node.right);
+        }
+
+        if (node.left != null) {
+            drawNodes(node.left);
+        }g
     }
 
     /**
