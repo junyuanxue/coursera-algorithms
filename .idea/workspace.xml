@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f264ce0-3056-4ffd-b18b-5f8502c500ba" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kdTree/PointSET.java" afterPath="$PROJECT_DIR$/src/kdTree/PointSET.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/kdTree/KdTree.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Algorithm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,19 +53,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PointSET.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PointSET.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kdTree/PointSET.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="87" column="5" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
+            <state relative-caret-position="0">
+              <caret line="0" column="28" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="e#234#235#0" expanded="true" />
                 <element signature="e#277#278#0" expanded="true" />
                 <element signature="e#352#353#0" expanded="true" />
                 <element signature="e#386#387#0" expanded="true" />
                 <element signature="e#464#465#0" expanded="true" />
                 <element signature="e#500#501#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KdTree.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/kdTree/KdTree.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+              <folding>
+                <element signature="e#677#678#0" expanded="true" />
+                <element signature="e#704#705#0" expanded="true" />
+                <element signature="e#779#780#0" expanded="true" />
+                <element signature="e#813#814#0" expanded="true" />
+                <element signature="e#891#892#0" expanded="true" />
+                <element signature="e#925#926#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,6 +120,7 @@
         <option value="$PROJECT_DIR$/src/eightPuzzle/Board.java" />
         <option value="$PROJECT_DIR$/src/eightPuzzle/Solver.java" />
         <option value="$PROJECT_DIR$/src/kdTree/PointSET.java" />
+        <option value="$PROJECT_DIR$/src/kdTree/KdTree.java" />
       </list>
     </option>
   </component>
@@ -893,16 +911,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kdTree/PointSET.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="87" column="5" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
+        <state relative-caret-position="0">
+          <caret line="0" column="28" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#234#235#0" expanded="true" />
             <element signature="e#277#278#0" expanded="true" />
             <element signature="e#352#353#0" expanded="true" />
             <element signature="e#386#387#0" expanded="true" />
             <element signature="e#464#465#0" expanded="true" />
             <element signature="e#500#501#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kdTree/KdTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+          <folding>
+            <element signature="e#677#678#0" expanded="true" />
+            <element signature="e#704#705#0" expanded="true" />
+            <element signature="e#779#780#0" expanded="true" />
+            <element signature="e#813#814#0" expanded="true" />
+            <element signature="e#891#892#0" expanded="true" />
+            <element signature="e#925#926#0" expanded="true" />
           </folding>
         </state>
       </provider>
