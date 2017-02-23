@@ -38,10 +38,34 @@ public class PointSET {
      * does the set contain point p?
      * */
     public boolean contains(Point2D p) {
+        if (p == null) throw new NullPointerException();
+        return points.contains(p);
+    }
 
-    }            
-    public              void draw()                         // draw all points to standard draw
-    public Iterable<Point2D> range(RectHV rect)             // all points that are inside the rectangle
+    /**
+     * draw all points to standard draw
+     * */
+    public void draw() {
+        for (Point2D point : points) {
+            point.draw();
+        }
+    }
+
+    /**
+     * all points that are inside the rectangle
+     * */
+    public Iterable<Point2D> range(RectHV rect) {
+        if (rect == null) throw new NullPointerException();
+
+        List<Point2D> foundPoints = new LinkedList<Point2D>();
+        for (Point2D point : points) {
+            if (rect.contains(point)) {
+                foundPoints.add(point);
+            }
+        }
+        return foundPoints;
+    }
+
     public           Point2D nearest(Point2D p)             // a nearest neighbor in the set to point p; null if the set is empty
 
     public static void main(String[] args)                  // unit testing of the methods (optional)
