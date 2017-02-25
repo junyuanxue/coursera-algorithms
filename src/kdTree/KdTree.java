@@ -1,4 +1,6 @@
 import java.util.LinkedList;
+import edu.princeton.cs.algs4.Point2D;
+import edu.princeton.cs.algs4.RectHV;
 
 public class KdTree {
     private static final boolean VERTICAL = true;

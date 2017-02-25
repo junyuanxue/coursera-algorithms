@@ -1,6 +1,9 @@
 import java.util.LinkedList;
 import java.util.List;
 import java.lang.NullPointerException;
+import edu.princeton.cs.algs4.SET;
+import edu.princeton.cs.algs4.Point2D;
+import edu.princeton.cs.algs4.RectHV;
 
 public class PointSET {
     private SET<Point2D> points;
