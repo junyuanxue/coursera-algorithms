@@ -208,7 +208,7 @@ public class KdTree {
         return nearestPoint;
     }
 
-    private void checkNearst(Node node) {
+    private void checkNearest(Node node) {
         if (node == null) return;
 
         if (nearestPoint == null) {
