@@ -31,7 +31,6 @@ public class KdTree {
      * */
     public KdTree() {
         root = null;
-        size = 0;
     }
 
     /**
@@ -45,7 +44,7 @@ public class KdTree {
      * number of points in the set
      * */
     public int size() {
-        return size;
+        return root == null ? 0 : size;
     }
 
     /**
