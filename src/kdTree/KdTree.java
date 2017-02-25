@@ -116,18 +116,18 @@ public class KdTree {
 
         Node currentPosition = root;
         while (currentPosition != null) {
-            if(p.equals(currentPosition.value)) {
+            if (p.equals(currentPosition.value)) {
                 return true;
             }
 
-            if (currPos.division == VERTICAL) { // use first bit to determine if level is even or odd
+            if (currentPosition.division == VERTICAL) { // use first bit to determine if level is even or odd
                 if (p.x() < currentPosition.value.x()) { // vertical slice
                     currentPosition = currentPosition.left;
                 } else {
                     currentPosition = currentPosition.right;
                 }
             } else {
-                if(p.y() < currentPosition.value.y()) { // horizontal slice
+                if (p.y() < currentPosition.value.y()) { // horizontal slice
                     currentPosition = currentPosition.left;
                 } else {
                     currentPosition = currentPosition.right;
@@ -168,7 +168,7 @@ public class KdTree {
         return containedPoints;
     }
 
-    private void checkPointsInRange(Node root, RectHV rect) {
+    private void checkPointsInRange(Node node, RectHV rect) {
         if (node == null) return;
         if (node.division == VERTICAL) {
             if (node.value.x() > rect.xmax()) {
@@ -183,7 +183,7 @@ public class KdTree {
                 }
             }
         } else {
-            if(node.value.y() > rect.ymax()) {
+            if (node.value.y() > rect.ymax()) {
                 checkPointsInRange(node.left, rect); // go to the left
             } else if (node.value.y() < rect.ymin()) {
                 checkPointsInRange(node.right, rect); // go to the right
@@ -208,7 +208,7 @@ public class KdTree {
         return nearestPoint;
     }
 
-    private void checkNearst() {
+    private void checkNearst(Node node) {
         if (node == null) return;
 
         if (nearestPoint == null) {
