@@ -155,7 +155,7 @@ public class KdTree {
 
         if (node.left != null) {
             drawNodes(node.left);
-        }g
+        }
     }
 
     /**
@@ -168,7 +168,7 @@ public class KdTree {
         return containedPoints;
     }
 
-    private checkPointsInRange(Node root, RectHV rect) {
+    private void checkPointsInRange(Node root, RectHV rect) {
         if (node == null) return;
         if (node.division == VERTICAL) {
             if (node.value.x() > rect.xmax()) {
@@ -208,7 +208,7 @@ public class KdTree {
         return nearestPoint;
     }
 
-    private checkNearst() {
+    private void checkNearst() {
         if (node == null) return;
 
         if (nearestPoint == null) {
