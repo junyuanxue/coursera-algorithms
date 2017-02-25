@@ -207,6 +207,56 @@ public class KdTree {
     }
 
     private checkNearst() {
-        
+        if (node == null) return;
+
+        if (nearestPoint == null) {
+            nearestPoint = node.value;
+        } else if (comparisonPoint.distanceTo(nearestPoint) > comparisonPoint.distanceTo(node.value)) {
+            nearestPoint = node.value;
+        }
+
+        if (node.division == VERTICAL) {
+            // If this point is closer than champion, explore both subtrees
+            if (comparisonPoint.distanceTo(nearestPoint) > comparisonPoint.distanceTo(node.value)) {
+                if (node.value.x() >= comparisonPoint.x()) {
+                    checkNearest(node.left);
+                    checkNearest(node.right);
+                } else {
+                    checkNearest(node.right);
+                    checkNearest(node.left);
+                }
+                // Otherwise explore the subtree closer to the comparison point
+            } else {
+                if(node.value.x() > comparisonPoint.x()) {
+                    checkNearest(node.left);
+                } else if(node.value.x() < comparisonPoint.x()) {
+                    checkNearest(node.right);
+                } else {
+                    checkNearest(node.left);
+                    checkNearest(node.right);
+                }
+            }
+        } else {
+            // If this point is closer than champion, explore both subtrees
+            if (comparisonPoint.distanceTo(nearestPoint) > comparisonPoint.distanceTo(node.value)) {
+                if(node.value.y() >= comparisonPoint.y()) {
+                    checkNearest(node.left);
+                    checkNearest(node.right);
+                } else {
+                    checkNearest(node.right);
+                    checkNearest(node.left);
+                }
+                // Otherwise explore the subtree closer to the comparison point
+            } else {
+                if(node.value.y() > comparisonPoint.y()) {
+                    checkNearest(node.left);
+                } else if(node.value.y() < comparisonPoint.y()) {
+                    checkNearest(node.right);
+                } else {
+                    checkNearest(node.left);
+                    checkNearest(node.right);
+                }
+            }
+        }
     }
 }
