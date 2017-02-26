@@ -168,7 +168,7 @@ public class KdTree {
      * */
     public Iterable<Point2D> range(final RectHV rect) {
         final TreeSet<Point2D> rangeSet = new TreeSet<Point2D>();
-        range(rootNode, CONTAINER, rect, rangeSet);
+        checkPointsInRange(rootNode, CONTAINER, rect, rangeSet);
 
         return rangeSet;
     }
@@ -208,7 +208,7 @@ public class KdTree {
         double distanceQueryToNearst = 0.0;
         double distanceRectToQuery = 0.0;
         RectHV left = null;
-        RectHV rigt = null;
+        RectHV right = null;
         final Point2D query = new Point2D(x, y);
         Point2D nearest = candidate;
 
@@ -225,24 +225,24 @@ public class KdTree {
 
             if (node.isVertical) {
                 left = new RectHV(rect.xmin(), rect.ymin(), node.x, rect.ymax());
-                rigt = new RectHV(node.x, rect.ymin(), rect.xmax(), rect.ymax());
+                right = new RectHV(node.x, rect.ymin(), rect.xmax(), rect.ymax());
 
                 if (x < node.x) {
                     nearest = findNearestPoint(node.leftNode, left, x, y, nearest);
-                    nearest = findNearestPoint(node.rightNode, rigt, x, y, nearest);
+                    nearest = findNearestPoint(node.rightNode, right, x, y, nearest);
                 } else {
-                    nearest = findNearestPoint(node.rightNode, rigt, x, y, nearest);
+                    nearest = findNearestPoint(node.rightNode, right, x, y, nearest);
                     nearest = findNearestPoint(node.leftNode, left, x, y, nearest);
                 }
             } else {
                 left = new RectHV(rect.xmin(), rect.ymin(), rect.xmax(), node.y);
-                rigt = new RectHV(rect.xmin(), node.y, rect.xmax(), rect.ymax());
+                right = new RectHV(rect.xmin(), node.y, rect.xmax(), rect.ymax());
 
                 if (y < node.y) {
                     nearest = findNearestPoint(node.leftNode, left, x, y, nearest);
-                    nearest = findNearestPoint(node.rightNode, rigt, x, y, nearest);
+                    nearest = findNearestPoint(node.rightNode, right, x, y, nearest);
                 } else {
-                    nearest = findNearestPoint(node.rightNode, rigt, x, y, nearest);
+                    nearest = findNearestPoint(node.rightNode, right, x, y, nearest);
                     nearest = findNearestPoint(node.leftNode, left, x, y, nearest);
                 }
             }
